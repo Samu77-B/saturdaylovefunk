@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Saturday Love Funk</title>
+    <link rel="icon" type="image/png" href="images/fav.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        /* Font Imports */
+        @font-face {
+            font-family: 'DelaGothicOne';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/DelaGothicOne-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'NotoSerifSC';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Bold.otf');
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'NotoSerifSC-Reg';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'MiSans';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf');
+        }
+
+        :root {
+            --primary-orange: #EE592D;
+            --dark-brown: #88432A;
+            --cream-beige: #F2DD99;
+            --gold: #c9a961;
+            --bg-dark: #0a0a0a;
+            --bg-charcoal: #1a1a1a;
+            --text-light: #f5f1f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            max-width: 100%;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'NotoSerifSC-Reg', serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: padding 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled-up {
+            padding: 12px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header.scrolled-up .logo img {
+            height: 40px;
+        }
+
+        header.scrolled-up .menu-toggle {
+            font-size: 32px;
+        }
+
+        @media (min-width: 768px) {
+            header {
+                padding: 25px 40px;
+            }
+
+            header.scrolled-up {
+                padding: 15px 30px;
+            }
+
+            header.scrolled-up .logo img {
+                height: 50px;
+            }
+
+            header.scrolled-up .menu-toggle {
+                font-size: 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            header {
+                padding: 25px 80px;
+            }
+
+            header.scrolled-up {
+                padding: 15px 60px;
+            }
+
+            header.scrolled-up .logo img {
+                height: 60px;
+            }
+
+            header.scrolled-up .menu-toggle {
+                font-size: 36px;
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
+            .logo img {
+                height: 75px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .logo img {
+                height: 90px;
+            }
+        }
+
+        .logo a {
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+        }
+
+        nav {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            max-width: 80%;
+            height: 100vh;
+            background: rgba(10, 10, 10, 0.98);
+            border-left: 1px solid rgba(201, 169, 97, 0.2);
+            padding: 80px 30px 30px 30px;
+            z-index: 999;
+            transition: right 0.6s ease;
+            overflow-y: auto;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        nav.active {
+            right: 0;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                width: 400px;
+                padding: 100px 40px 40px 40px;
+            }
+        }
+
+        nav a {
+            font-family: 'MiSans', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            position: relative;
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            nav a {
+                font-size: 16px;
+                padding: 18px 0;
+            }
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 48px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+            position: relative;
+            transition: font-size 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: var(--gold);
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .nav-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Content Section */
+        .content-section {
+            margin-top: 80px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+            .content-section {
+                margin-top: 90px;
+                padding: 80px 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .content-section {
+                padding: 100px 60px;
+            }
+        }
+
+        .page-title {
+            font-family: 'DelaGothicOne', cursive;
+            font-size: 36px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .page-title {
+                font-size: 48px;
+                margin-bottom: 50px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .page-title {
+                font-size: 56px;
+                margin-bottom: 60px;
+            }
+        }
+
+        .terms-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        @media (min-width: 768px) {
+            .terms-content {
+                font-size: 17px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .terms-content {
+                font-size: 18px;
+            }
+        }
+
+        .terms-content h2 {
+            font-family: 'NotoSerifSC', serif;
+            font-size: 24px;
+            color: var(--gold);
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .terms-content h2 {
+                font-size: 28px;
+                margin-top: 50px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .terms-content h2 {
+                font-size: 32px;
+                margin-top: 60px;
+            }
+        }
+
+        .terms-content h3 {
+            font-family: 'NotoSerifSC', serif;
+            font-size: 20px;
+            color: var(--primary-orange);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .terms-content h3 {
+                font-size: 22px;
+                margin-top: 35px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .terms-content h3 {
+                font-size: 24px;
+                margin-top: 40px;
+            }
+        }
+
+        .terms-content p {
+            margin-bottom: 20px;
+        }
+
+        .terms-content ul {
+            list-style: disc;
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .terms-content ul {
+                margin-left: 40px;
+            }
+        }
+
+        .terms-content li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .terms-content strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 40px 20px;
+            border-top: 1px solid #222;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            footer {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 60px 40px;
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            footer {
+                padding: 80px 100px;
+                flex-wrap: nowrap;
+            }
+        }
+
+        .footer-col {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .footer-col {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-col {
+                width: auto;
+            }
+        }
+
+        .footer-col h4 {
+            font-family: 'NotoSerifSC', serif;
+            color: var(--gold);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-col h4 {
+                font-size: 17px;
+                margin-bottom: 22px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-col h4 {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+        }
+
+        .footer-col p, .footer-col a {
+            color: #bbb;
+            font-family: 'MiSans', sans-serif;
+            font-size: 13px;
+            line-height: 2;
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .footer-col p, .footer-col a {
+                font-size: 14px;
+            }
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px;
+            background: #000;
+            color: #aaa;
+            font-size: 12px;
+            font-family: 'MiSans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #aaa;
+        }
+
+        .footer-bottom a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Grid Texture Overlay */
+        .grid-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Grid Texture -->
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation Overlay -->
+    <!-- Header Container (populated by components/header.js) -->
+    <div id="header-container"></div>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <h1 class="page-title">Terms & Conditions</h1>
+        <div class="terms-content">
+            <p>Saturday Love returns in 2026, for our second open air All Dayer. Bringing you the best of Jazz Funk, Soul, Funk, Disco, Soulful House and Rare Groove. Going back to those '70s and '80s club days evoking memories of the "Tribes" you used to "hang with".</p>
+
+            <p>We have major live acts, and a some of the UK's favourite independent radio and club DJ's, food & drink stalls, plus pick up a classic vinyl at the record stall. Check out our range of merchandise too.</p>
+
+            <p>Our wish is that you all come to enjoy and do have a great time at our Saturday Love All Dayer. Below are a few T&Cs to help the day along.</p>
+
+            <h2>Ticketing</h2>
+            <p>Tickets are sold through The Friends of Broomfield Park and managed by Ticket Source. On the day you will bring along your ticket acknowledgment and will be issued a relevant wristband which will allow you to move around the venue and come in and out if necessary.</p>
+
+            <p>Tickets and wristbands are not transferrable so you and the other person could be ejected from the event if caught with a wristband or ticket you haven't purchased or swopped with someone outside.</p>
+
+            <p>Advanced bookings only as there are limited spaces unless otherwise informed. This year we will also have early bird tickets available at great prices.</p>
+
+            <p>Anyone under the age of 18 will only be admitted to the event if accompanied by a parent(s) or legal guardian(s).</p>
+
+            <h2>Refund Policy</h2>
+            <p>You will not be entitled to a refund if you can no longer attend the festival for any reason, if the festival is rescheduled for another date or if an understudy is used in place of the festival's headline act or a headlining act changes from the one(s) advertised on the line-up. You may only be entitled to a refund if the festival is cancelled (but not rescheduled) or has changed location. The refund will be at least the face value of the ticket but does not include the booking fees and there will be an additional admin fee charge* of 3% of the ticket order if you cancel.</p>
+
+            <h2>Food & Drink</h2>
+            <p>No alcohol can be bought into the main area (The Bowl). Alcohol is available to buy at the event at our fully licensed bars.</p>
+
+            <p>You will be asked to leave excess quantities of soft drinks outside the event and you will NOT be allowed to re-enter with your own alcohol once you've entered the site via the entrance gates.</p>
+
+            <p>Only soft drinks/water in sealed/unopened bottles & tins are allowed into the festival's main arena and you will not be able to bring in glass bottles of any kind. Broken glass is very dangerous, not only for people who are attending, but for those who use the park after the festival. If you have driven to the festival, please leave all glass/bottles in your vehicle. Opened and unsealed soft drinks must be disposed of before entering the event and placed in one of our available litter bins outside the main arena.</p>
+
+            <p>No food will be allowed into the venue as we will have food stalls available for you to purchase from unless you have specific dietary requirements. If so, please can you inform us beforehand. Our stall holders will have alternative food choices including vegetarian and vegan options. Please inform food stallholders of any allergens before purchasing food & drink.</p>
+
+            <h2>Behaviour</h2>
+            <p>The Saturday Love All Dayer is for everyone to enjoy so we ask that all ticket holders please behave themselves, be tolerant of others. Rudeness, drunkenness, abusive and unsociable behaviour will not be tolerated and you may be ejected from the event area without refund.</p>
+
+            <p>When leaving the event please be quiet and respect our neighbours by leaving in an orderly manner.</p>
+
+            <h2>Rubbish</h2>
+            <p>There will be bins in the area but please take any rubbish you may have brought yourselves home with you.</p>
+
+            <h2>Dogs and Pets</h2>
+            <p>Unless a guide dog none will be allowed into the event site.</p>
+
+            <h2>Chairs and other Parafernalia</h2>
+            <p>Please feel free to bring along fold up chairs, groundsheets, blankets and perhaps an umbrella depending on the weather. However please be aware of space as there will be a lot of boogieing, if you want to lay down a groundsheet or set up chairs then perhaps come early to get your space. We suggest more around the outside of the main area.</p>
+
+            <h2>Event Open/Closure time</h2>
+            <p>Street entry from the main gate (Broomfield Bowl) will be from 1.30pm to those who have pre-paid tickets. The event is expected to close at 10pm on Saturday 21st June 2025. First main artists play from 4pm approximately but running order nearer the time of the event.</p>
+
+            <h2>ROAR/Security & Safety</h2>
+            <p>Saturday Love Funk and security on the day have the Right Of Admission Reserved.</p>
+
+            <p>All persons will be subject to search before entering the gates, if any drugs or illegal substances found then we reserve the right to call the police and we reserve the right to refuse entry.</p>
+
+            <p>We will be running a challenge 25 policy. We can refuse to sell age restricted products to anyone who appears to be under the age of 25 years old and does not have an acceptable form of photo identification (ID), like a PASS card. We can be fined for selling age-restricted products to people who are under age and want to keep the event legal for all concerned.</p>
+
+            <h2>Health Issues</h2>
+            <p>Exposure to loud and excessive music may be damaging to your hearing. Strobe lighting and flash photography may also be used at the event.</p>
+
+            <p>There may be midges on site as it is in an open space with trees and grass so you may need insect repellent if you get an adverse reaction to bites.</p>
+
+            <p>Also please be aware of bright sunlight and put on the relevant sunscreen level for your skin type.</p>
+
+            <h2>Disclaimer/Other Info</h2>
+            <p>Should the event or its organisers be unable to perform any of its obligations during the event due to causes of circumstances beyond its reasonable control, including to but not limited to any Act of God, force majeure, fire, flood, drought, strike, lock out or actions of the venue (The Friends of Broomfield Park), we will not be liable to you for any loss or claims arising from this.</p>
+
+            <p>All event attendees give their express consent to the use of the actual or simulated likeness in connection with the production, exhibition, advertising and/or any utilisation of any photo, film, media and/or any video recording of this event/or any element thereof in any/all media throughout the world.</p>
+
+            <p>The use of photographic equipment or sound recording is prohibited at this even without the express permission of SaturdayLoveFunk.com</p>
+
+            <p>SaturdayLoveFunk.com reserve the right to change the line up without notification.</p>
+
+            <p>You must not bring the following items into the event site portable laser equipment or pens; film or video equipment; audio recorder; air horn; speary cans; fireworks and/or flares; We will report anyone to the authorities who do not comply with this list and also require any person possessing these items to leave the event site immediately on request.</p>
+
+            <p>If the event organisers require you to leave the event site you must do so immediately. Please be aware of the emergency exits.</p>
+
+            <h2>SaturdayLoveFunk.com Website</h2>
+            <p>The information contained on our website is for general information purpose only and is provided by SaturdayLoveFunk.com unless linked through to one of our partners or artists websites which we have no control over as SaturdayLoveFunk.com. While we endeavour to keep the information provided up to date and correct, we make no representations or warranties of any kind, express or implied about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at you're your own risk.</p>
+
+            <p>Every effort will be made to keep the website up and running smoothly. However, SaturdayLoveFunk.com takes no responsibility for and will not be liable for, the website being temporarily unavailable due to technical issue beyond our control.</p>
+
+            <p>In no event will we liable for any loss or damage including without limitation, indirect or consequential loss or damage whatsoever arsing form loss or data or profits arising out of, or in connection with, the use of this website. The inclusion of any links does not necessarily imply a recommendation or endorse the views within them.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer Container (populated by components/footer.js) -->
+    <div id="footer-container"></div>
+
+    <!-- Reusable Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+
+</body>
+</html>
+

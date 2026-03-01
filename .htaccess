@@ -1,0 +1,170 @@
+# ============================================
+# ENHANCED SECURITY .htaccess FILE
+# Saturday Love Funk Website
+# ============================================
+
+# 1. STOP CROSS-SITE CONTAMINATION (The "Jumping" Fix)
+# This prevents a script in Site A from using a "Symlink" to read Site B.
+<IfModule mod_rewrite.c>
+    Options -FollowSymLinks
+    Options +SymLinksIfOwnerMatch
+</IfModule>
+
+# 2. DISABLE DIRECTORY BROWSING
+# Prevents hackers from seeing your file structure (e.g., your /inc or /config folders).
+Options -Indexes
+
+# 3. PROTECT YOUR CORE CONFIG FILES
+# Blocks access to sensitive files and common malware injection points
+<FilesMatch "^(\.htaccess|\.htpasswd|\.env|\.env\.local|\.env\.production|php\.ini|error_log|\.git|\.gitignore|\.gitattributes|composer\.json|composer\.lock|package\.json|package-lock\.json|\.DS_Store|Thumbs\.db|\.user\.ini)$">
+    # Apache 2.4+
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    # Apache 2.2 fallback
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 4. PROTECT COMMON BACKUP AND TEMPORARY FILES
+<FilesMatch "\.(bak|backup|old|orig|original|save|swo|swp|tmp|temp|log|sql)$">
+    # Apache 2.4+
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    # Apache 2.2 fallback
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 5. BLOCK MALICIOUS SCRIPT INJECTIONS (Common JS Skimmer & Malware Patterns)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Block common malware/backdoor patterns in query strings
+    RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} proc/self/environ [OR]
+    RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|\%3D) [OR]
+    RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*embed.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*object.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*meta.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (javascript:).*(;|%3B) [NC,OR]
+    RewriteCond %{QUERY_STRING} (eval\().*(\)) [NC,OR]
+    RewriteCond %{QUERY_STRING} (expression\().*(\)) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.\) [OR]
+    RewriteCond %{QUERY_STRING} (boot\.ini|etc/passwd|self/environ) [OR]
+    RewriteCond %{QUERY_STRING} (thumbs?\.db|Thumbs\.db) [NC,OR]
+    RewriteCond %{QUERY_STRING} ^.*(\[|\]|\(|\)|<|>).* [NC,OR]
+    RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [OR]
+    RewriteCond %{QUERY_STRING} (\./|\.\./|\.\.|\.\.%) [OR]
+    RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\.)(git|svn|cvs) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+# 6. BLOCK SUSPICIOUS USER AGENTS (Common Bot/Malware User Agents)
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+    RewriteCond %{HTTP_USER_AGENT} ^(-|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (libwww|Wget|Python|nikto|curl|Scanner|WinHTTP|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+# 7. PREVENT ACCESS TO HIDDEN FILES (Starting with .)
+<IfModule mod_rewrite.c>
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F,L]
+</IfModule>
+
+# 8. DISABLE SERVER SIGNATURE (Hides server version info)
+<IfModule mod_headers.c>
+    ServerSignature Off
+</IfModule>
+
+# 9. SECURITY HEADERS (Additional Protection)
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # XSS Protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Remove server information
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+</IfModule>
+
+# 10. BLOCK ACCESS TO PHP/SCRIPT FILES (If PHP is not used)
+# Since this is a static site, block PHP execution and scripts if PHP handler exists
+# Note: HTML files are allowed as this is a static HTML site
+<IfModule mod_rewrite.c>
+    RewriteRule \.(php|phtml|php3|php4|php5|phps|cgi|exe|pl|asp|aspx|shtml|shtm|fcgi|fpl|jsp|sh|py)$ - [F,L]
+</IfModule>
+
+# 11. LIMIT REQUEST SIZE (Prevent large upload attacks)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+</IfModule>
+
+# 12. PREVENT DIRECT ACCESS TO CERTAIN FILE TYPES
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf)$">
+    # Apache 2.4+
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    # Apache 2.2 fallback
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 13. FORCE HTTPS (Uncomment if you have SSL)
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# 14. PROTECT AGAINST HOTLINKING (Optional - Uncomment if needed)
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTP_REFERER} !^$
+#     RewriteCond %{HTTP_REFERER} !^https?://(www\.)?saturdaylovefunk\.com [NC]
+#     RewriteRule \.(jpg|jpeg|png|gif|webp|mp4|mov)$ - [F,L]
+# </IfModule>
+
+# 15. ENABLE GZIP COMPRESSION (Performance)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml
+</IfModule>
+
+# 16. BROWSER CACHING (Performance)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+</IfModule>

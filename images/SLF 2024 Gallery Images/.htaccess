@@ -1,0 +1,94 @@
+# ============================================
+# GALLERY IMAGES FOLDER PROTECTION
+# Saturday Love Funk Website - SLF 2024 Gallery
+# ============================================
+
+# DISABLE DIRECTORY BROWSING
+Options -Indexes
+
+# PREVENT EXECUTION OF ALL SCRIPTS AND NON-IMAGE FILES
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Block ALL script files, executables, and non-image files
+    RewriteRule \.(php|phtml|php3|php4|php5|phps|cgi|exe|pl|asp|aspx|shtml|shtm|fcgi|fpl|jsp|sh|py|js|html|htm|txt|md|xml|json|log|sql|bak|backup|old|orig|zip|tar|gz)$ - [F,L]
+</IfModule>
+
+# PROTECT CONFIG AND SENSITIVE FILES
+<FilesMatch "^(\.htaccess|\.htpasswd|\.env|config\.php|\.git|\.gitignore|\.DS_Store|Thumbs\.db|error_log|access_log|\.user\.ini)$">
+    # Apache 2.4+
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    # Apache 2.2 fallback
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# BLOCK MALICIOUS QUERY STRINGS (Comprehensive Protection)
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} (eval\(|base64_decode|gzinflate|str_rot13) [NC,OR]
+    RewriteCond %{QUERY_STRING} (exec|shell_exec|system|passthru) [NC,OR]
+    RewriteCond %{QUERY_STRING} (proc/self/environ|boot\.ini|etc/passwd) [OR]
+    RewriteCond %{QUERY_STRING} (\.)(git|svn|cvs) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.|\.\.%) [OR]
+    RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+# ALLOW ONLY IMAGE FILES (Strict - Only images allowed)
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|bmp|tiff|avif|heic)$">
+    # Apache 2.4+
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    # Apache 2.2 fallback
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Allow from all
+    </IfModule>
+</FilesMatch>
+
+# DENY ACCESS TO ALL OTHER FILE TYPES
+<FilesMatch "^[^.]*$|\.(php|phtml|js|html|htm|txt|md|xml|json|log|sql|bak|backup|old|orig|zip|tar|gz|exe|dll|sh|py|pl)$">
+    # Apache 2.4+
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    # Apache 2.2 fallback
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# SET PROPER MIME TYPES FOR IMAGES
+<IfModule mod_mime.c>
+    AddType image/jpeg .jpg .jpeg
+    AddType image/png .png
+    AddType image/gif .gif
+    AddType image/webp .webp
+    AddType image/svg+xml .svg
+    AddType image/x-icon .ico
+    AddType image/bmp .bmp
+    AddType image/tiff .tiff
+    AddType image/avif .avif
+</IfModule>
+
+# SECURITY HEADERS FOR IMAGES
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    # Prevent caching of malicious files if somehow injected
+    Header set Cache-Control "public, max-age=31536000"
+</IfModule>
+
+# PREVENT ACCESS TO HIDDEN FILES
+<IfModule mod_rewrite.c>
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F,L]
+</IfModule>
