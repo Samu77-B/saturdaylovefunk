@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Gallery - Saturday Love Funk</title>
+    <meta name="description" content="View photos from the 2025 Saturday Love Funk event at Broomfield Park, Palmers Green, London.">
+    <link rel="icon" type="image/png" href="images/fav.png">
+    <link rel="preconnect" href="https://assets-persist.lovart.ai">
+    <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/DelaGothicOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        /* Font Imports */
+        @font-face {
+            font-family: 'DelaGothicOne';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/DelaGothicOne-Regular.ttf');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NotoSerifSC';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Bold.otf');
+            font-weight: 700;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NotoSerifSC-Reg';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'MiSans';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf');
+            font-display: swap;
+        }
+
+        :root {
+            --primary-orange: #EE592D;
+            --dark-brown: #88432A;
+            --cream-beige: #F2DD99;
+            --gold: #c9a961;
+            --bg-dark: #0a0a0a;
+            --bg-charcoal: #1a1a1a;
+            --text-light: #f5f1f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            max-width: 100%;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'NotoSerifSC-Reg', 'Georgia', 'Times New Roman', serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: padding 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled-up {
+            padding: 12px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header.scrolled-up .logo img {
+            height: 40px;
+        }
+
+        header.scrolled-up .menu-toggle {
+            font-size: 32px;
+        }
+
+        @media (min-width: 768px) {
+            header {
+                padding: 25px 40px;
+            }
+
+            header.scrolled-up {
+                padding: 15px 30px;
+            }
+
+            header.scrolled-up .logo img {
+                height: 50px;
+            }
+
+            header.scrolled-up .menu-toggle {
+                font-size: 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            header {
+                padding: 25px 80px;
+            }
+
+            header.scrolled-up {
+                padding: 15px 60px;
+            }
+
+            header.scrolled-up .logo img {
+                height: 60px;
+            }
+
+            header.scrolled-up .menu-toggle {
+                font-size: 36px;
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
+            .logo img {
+                height: 75px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .logo img {
+                height: 90px;
+            }
+        }
+
+        .logo i {
+            display: none;
+        }
+
+        .logo a {
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+        }
+
+        nav {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            max-width: 80%;
+            height: 100vh;
+            background: rgba(10, 10, 10, 0.98);
+            border-left: 1px solid rgba(201, 169, 97, 0.2);
+            padding: 80px 30px 30px 30px;
+            z-index: 999;
+            transition: right 0.6s ease;
+            overflow-y: auto;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        nav.active {
+            right: 0;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                width: 400px;
+                padding: 100px 40px 40px 40px;
+            }
+        }
+
+        nav a {
+            font-family: 'MiSans', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            position: relative;
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            nav a {
+                font-size: 16px;
+                padding: 18px 0;
+            }
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 48px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+            position: relative;
+            transition: font-size 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: var(--gold);
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .nav-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .gallery-hero {
+            margin-top: 90px;
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, var(--bg-dark) 100%);
+        }
+
+        @media (min-width: 768px) {
+            .gallery-hero {
+                padding: 80px 40px;
+                margin-top: 100px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-hero {
+                padding: 100px 100px;
+            }
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            font-family: 'MiSans', sans-serif;
+            font-size: 14px;
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-orange);
+            opacity: 0.8;
+        }
+
+        @media (min-width: 768px) {
+            .back-link {
+                font-size: 16px;
+                margin-top: 30px;
+            }
+        }
+
+        .gallery-hero h1 {
+            font-family: 'DelaGothicOne', cursive;
+            font-size: 36px;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #fff 30%, var(--cream-beige) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-hero h1 {
+                font-size: 48px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-hero h1 {
+                font-size: 64px;
+            }
+        }
+
+        .gallery-hero p {
+            font-family: 'MiSans', sans-serif;
+            font-size: 14px;
+            color: #aaa;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-hero p {
+                font-size: 16px;
+            }
+        }
+
+        /* Gallery Grid */
+        .gallery-section {
+            padding: 40px 20px;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-section {
+                padding: 60px 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-section {
+                padding: 80px 100px;
+            }
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            background: var(--bg-charcoal);
+            border: 1px solid rgba(201, 169, 97, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(238, 89, 45, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, opacity 0.3s ease;
+        }
+
+        .gallery-item img.loading {
+            opacity: 0.3;
+            filter: blur(5px);
+        }
+
+        .gallery-item img.loaded {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: var(--text-light);
+            font-size: 40px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary-orange);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--text-light);
+            border: 2px solid var(--gold);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            .lightbox-prev {
+                left: 10px;
+            }
+            .lightbox-next {
+                right: 10px;
+            }
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--gold);
+            font-family: 'MiSans', sans-serif;
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 40px 20px;
+            border-top: 1px solid #222;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 12px;
+            font-family: 'MiSans', sans-serif;
+        }
+
+        footer a {
+            color: var(--gold);
+        }
+
+        footer a:hover {
+            color: var(--primary-orange);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container (populated by components/header.js) -->
+    <div id="header-container"></div>
+
+    <!-- Gallery Hero -->
+    <section class="gallery-hero">
+        <h1>2025 Gallery</h1>
+        <p>Broomfield Park, Palmers Green</p>
+        <a href="index.html" class="back-link">
+            <i class="ri-arrow-left-line"></i>
+            Back to Home
+        </a>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="loading">Loading images...</div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">
+            <i class="ri-close-line"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+            <i class="ri-arrow-left-line"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">
+            <i class="ri-arrow-right-line"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Saturday Love Funk 2025 Gallery Image" decoding="async">
+        </div>
+    </div>
+
+    <!-- Footer Container (populated by components/footer.js) -->
+    <div id="footer-container"></div>
+
+    <script>
+        // 2025 gallery images from SFL 2025 Gallery Images folder (sorted by filename)
+        const imageFiles = [
+            '20250621_143630.jpg',
+            '20250621_143720.jpg',
+            '20250621_143731.jpg',
+            '20250621_145515.jpg',
+            '20250621_162112.jpg',
+            '20250621_162403.jpg',
+            '20250621_163407.jpg',
+            '20250621_171005.jpg',
+            '20250621_171055.jpg',
+            '20250621_171633.jpg',
+            '20250621_173041.jpg',
+            '20250621_173044.jpg',
+            '20250621_185458.jpg',
+            '20250621_202817.jpg',
+            '20250621_203147.jpg',
+            '20250621_204958.jpg',
+            '20250621_205013.jpg',
+            '20250621_205018.jpg',
+            '20250621_205027.jpg',
+            '20250621_205032.jpg',
+            '20250621_205036.jpg',
+            '20250621_205043.jpg',
+            '20250621_205101.jpg',
+            '20250621_211000.jpg',
+            '20250621_212539.jpg',
+            '20250621_212630.jpg',
+            '20250621_212639.jpg',
+            '20250621_221136.jpg',
+            '20250621_221202.jpg'
+        ];
+
+        const imagePath = 'images/SFL 2025 Gallery Images/';
+        let currentImageIndex = 0;
+
+        function getFullImagePath(filename) {
+            return imagePath + filename;
+        }
+
+        function generateAltText(filename, index) {
+            return `Saturday Love Funk 2025 event at Broomfield Park - Photo ${index + 1}`;
+        }
+
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+
+            imageFiles.forEach((filename, displayIndex) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.setAttribute('data-index', displayIndex);
+
+                const placeholder = document.createElement('div');
+                placeholder.className = 'image-placeholder';
+                placeholder.textContent = 'Loading...';
+                galleryItem.appendChild(placeholder);
+
+                const img = document.createElement('img');
+                img.alt = generateAltText(filename, displayIndex);
+                img.setAttribute('data-filename', filename);
+                img.decoding = 'async';
+                img.loading = displayIndex < 6 ? 'eager' : 'lazy';
+                img.fetchPriority = displayIndex < 6 ? 'high' : 'low';
+                img.className = 'loading';
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            img.onload = function() {
+                                img.classList.remove('loading');
+                                img.classList.add('loaded');
+                                if (placeholder.parentNode) {
+                                    placeholder.remove();
+                                }
+                            };
+                            img.onerror = function() {
+                                placeholder.textContent = 'Image unavailable';
+                            };
+                            img.src = getFullImagePath(filename);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { rootMargin: '200px' });
+
+                galleryItem.appendChild(img);
+                observer.observe(galleryItem);
+                galleryItem.addEventListener('click', () => openLightbox(displayIndex));
+                grid.appendChild(galleryItem);
+            });
+        }
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const filename = imageFiles[index];
+
+            lightboxImage.alt = generateAltText(filename, index);
+            lightboxImage.style.opacity = '0.5';
+            lightboxImage.style.filter = 'blur(5px)';
+
+            const fullImage = new Image();
+            fullImage.onload = function() {
+                lightboxImage.src = getFullImagePath(filename);
+                lightboxImage.style.opacity = '1';
+                lightboxImage.style.filter = 'blur(0)';
+            };
+            fullImage.onerror = function() {
+                lightboxImage.src = getFullImagePath(filename);
+                lightboxImage.style.opacity = '1';
+                lightboxImage.style.filter = 'blur(0)';
+            };
+            fullImage.src = getFullImagePath(filename);
+
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+            const lightboxImage = document.getElementById('lightboxImage');
+            const filename = imageFiles[currentImageIndex];
+            lightboxImage.alt = generateAltText(filename, currentImageIndex);
+            lightboxImage.style.opacity = '0.5';
+            lightboxImage.style.filter = 'blur(5px)';
+            const fullImage = new Image();
+            fullImage.onload = function() {
+                lightboxImage.src = getFullImagePath(filename);
+                lightboxImage.style.opacity = '1';
+                lightboxImage.style.filter = 'blur(0)';
+            };
+            fullImage.src = getFullImagePath(filename);
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+            const lightboxImage = document.getElementById('lightboxImage');
+            const filename = imageFiles[currentImageIndex];
+            lightboxImage.alt = generateAltText(filename, currentImageIndex);
+            lightboxImage.style.opacity = '0.5';
+            lightboxImage.style.filter = 'blur(5px)';
+            const fullImage = new Image();
+            fullImage.onload = function() {
+                lightboxImage.src = getFullImagePath(filename);
+                lightboxImage.style.opacity = '1';
+                lightboxImage.style.filter = 'blur(0)';
+            };
+            fullImage.src = getFullImagePath(filename);
+        }
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxNext').addEventListener('click', showNextImage);
+        document.getElementById('lightboxPrev').addEventListener('click', showPrevImage);
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') showNextImage();
+                if (e.key === 'ArrowLeft') showPrevImage();
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', renderGallery);
+    </script>
+
+    <!-- Reusable Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+</body>
+</html>
