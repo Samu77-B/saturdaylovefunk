@@ -247,10 +247,63 @@
             width: 100%;
         }
 
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .nav-btn {
+            text-align: center;
+            font-size: 13px !important;
+            padding: 14px 25px !important;
+            border-bottom: none !important;
+            border: 2px solid var(--gold) !important;
+        }
+
+        .nav-btn.btn-fill {
+            border-color: var(--primary-orange) !important;
+        }
+
+        nav a.nav-btn::after {
+            display: none !important;
+        }
+
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
+        }
+
+        .header-btn {
+            display: none;
+            font-size: 11px !important;
+            padding: 8px 16px !important;
+            white-space: nowrap;
+        }
+
+        @media (min-width: 768px) {
+            .header-btn {
+                display: inline-block;
+            }
+
+            .header-actions {
+                gap: 12px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header-btn {
+                font-size: 12px !important;
+                padding: 10px 22px !important;
+            }
+
+            .header-actions {
+                gap: 15px;
+            }
         }
 
         .menu-toggle {
@@ -578,21 +631,108 @@
             background: #050505;
             padding: 40px 20px;
             border-top: 1px solid #222;
-            text-align: center;
             margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
-        footer p {
+        @media (min-width: 768px) {
+            footer {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 60px 40px;
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            footer {
+                padding: 80px 100px;
+                flex-wrap: nowrap;
+            }
+        }
+
+        .footer-col {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .footer-col {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-col {
+                width: auto;
+            }
+        }
+
+        .footer-col h4 {
+            font-family: 'NotoSerifSC', serif;
+            color: var(--gold);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-col h4 {
+                font-size: 17px;
+                margin-bottom: 22px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-col h4 {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+        }
+
+        .footer-col p, .footer-col a {
+            color: #bbb;
+            font-family: 'MiSans', sans-serif;
+            font-size: 13px;
+            line-height: 2;
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .footer-col p, .footer-col a {
+                font-size: 14px;
+            }
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px;
+            background: #000;
             color: #aaa;
             font-size: 12px;
             font-family: 'MiSans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        footer a {
+        .footer-bottom p {
+            margin: 0;
+            color: #aaa;
+        }
+
+        .footer-bottom a {
             color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        footer a:hover {
+        .footer-bottom a:hover {
             color: var(--primary-orange);
         }
     </style>
