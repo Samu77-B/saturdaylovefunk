@@ -71,6 +71,53 @@
             transition: 0.3s;
         }
 
+        /* Base button styles (match index) */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-family: 'MiSans', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            border-radius: 6px;
+        }
+
+        @media (min-width: 768px) {
+            .btn {
+                padding: 15px 35px;
+                font-size: 13px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .btn {
+                padding: 15px 40px;
+                font-size: 14px;
+            }
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        .btn-fill {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+            color: #fff;
+        }
+
+        .btn-fill:hover {
+            background: #d4481f;
+            border-color: #d4481f;
+        }
+
         /* Header */
         header {
             width: 100%;
