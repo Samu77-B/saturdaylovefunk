@@ -24,9 +24,8 @@
                 <h4>Contact</h4>
                 <a href="mailto:contact@saturdaylovefunk.com">contact@saturdaylovefunk.com</a>
                 <div style="margin-top: 20px; display: flex; gap: 15px;">
-                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line" style="font-size: 24px;"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill" style="font-size: 24px;"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line" style="font-size: 24px;"></i></a>
+                    <a href="https://www.instagram.com/saturdaylovefunk" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ri-instagram-line" style="font-size: 24px;"></i></a>
+                    <a href="https://www.youtube.com/@saturdaylovefunk" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="ri-youtube-line" style="font-size: 24px;"></i></a>
                 </div>
             </div>
         </footer>
