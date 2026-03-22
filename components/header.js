@@ -18,16 +18,19 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#lineup">The Line Up</a></li>
                     <li><a href="gallery-2024.html">Gallery</a></li>
                     <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
                 <div class="nav-buttons">
                     <a href="https://urnextevent.com/events/saturday-love-all-dayer-2026" target="_blank" class="btn btn-fill nav-btn">BUY NOW SLF26</a>
+                    <a href="index.html#lineup" class="btn nav-btn">The Line Up</a>
                     <a href="index.html#upcoming-events" class="btn nav-btn">Upcoming Events</a>
                 </div>
             </nav>
             <div class="header-actions">
                 <a href="https://urnextevent.com/events/saturday-love-all-dayer-2026" target="_blank" class="btn btn-fill header-btn">BUY NOW SLF26</a>
+                <a href="index.html#lineup" class="btn header-btn">The Line Up</a>
                 <a href="index.html#upcoming-events" class="btn header-btn">Upcoming Events</a>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                     <i class="ri-menu-line"></i>
