@@ -1145,49 +1145,200 @@
         .lineup-content {
             position: relative;
             z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .lineup-card {
-            max-width: 800px;
+        .lineup-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 24px;
+            padding: 0 8px;
+        }
+
+        @media (min-width: 900px) {
+            .lineup-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+                margin-bottom: 32px;
+            }
+        }
+
+        /* Card = full-bleed video with text overlaid at bottom */
+        .lineup-band-card {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            aspect-ratio: 1 / 1;
+            background: #0a0a0a;
+            text-align: center;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lineup-band-card:hover {
+            border-color: var(--primary-orange);
+            box-shadow: 0 8px 24px rgba(238, 89, 45, 0.2);
+        }
+
+        .lineup-band-card .lineup-video-wrap {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            max-width: none;
+            border-radius: 0;
+            border: none;
+            background: linear-gradient(160deg, #1f1f1f 0%, #0a0a0a 100%);
+        }
+
+        .lineup-card-scrim {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 55%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.5) 45%, transparent 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .lineup-card-text {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            padding: 18px 14px 20px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .lineup-card-text {
+                padding: 22px 18px 24px;
+            }
+        }
+
+        .lineup-card-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            background: #000;
+        }
+
+        .lineup-band-name {
+            font-family: 'NotoSerifSC', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--cream-beige);
+            margin: 0 0 6px;
+            line-height: 1.25;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+        }
+
+        @media (min-width: 768px) {
+            .lineup-band-name {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lineup-band-name {
+                font-size: 22px;
+            }
+        }
+
+        .lineup-band-sub {
+            font-family: 'MiSans', sans-serif;
+            font-size: 13px;
+            color: rgba(245, 241, 240, 0.95);
+            line-height: 1.45;
+            margin: 0;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        @media (min-width: 768px) {
+            .lineup-band-sub {
+                font-size: 15px;
+            }
+        }
+
+        .lineup-dj-card {
+            position: relative;
+            max-width: 1100px;
             margin: 0 auto;
             border: 2px solid var(--gold);
-            padding: 40px 20px;
-            background: rgba(0,0,0,0.6);
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            min-height: 200px;
+            background: #0a0a0a;
+            text-align: center;
         }
 
         @media (min-width: 768px) {
-            .lineup-card {
-                padding: 60px 30px;
+            .lineup-dj-card {
+                min-height: 240px;
             }
         }
 
-        @media (min-width: 1024px) {
-            .lineup-card {
-                padding: 80px 40px;
+        .lineup-dj-card .lineup-video-wrap {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            max-width: none;
+            border-radius: 0;
+            border: none;
+            background: linear-gradient(160deg, #1f1f1f 0%, #0a0a0a 100%);
+        }
+
+        .lineup-dj-card .lineup-card-text {
+            padding-bottom: 22px;
+        }
+
+        @media (min-width: 768px) {
+            .lineup-dj-card .lineup-card-text {
+                padding-bottom: 28px;
             }
         }
 
-        .lineup-placeholder {
+        .lineup-dj-card h3 {
             font-family: 'NotoSerifSC', serif;
-            font-size: 24px;
-            font-style: italic;
-            color: var(--cream-beige);
-            margin-bottom: 15px;
+            font-size: 20px;
+            color: var(--gold);
+            margin: 0 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
         }
 
         @media (min-width: 768px) {
-            .lineup-placeholder {
-                font-size: 30px;
-                margin-bottom: 18px;
+            .lineup-dj-card h3 {
+                font-size: 24px;
+                margin-bottom: 12px;
             }
         }
 
-        @media (min-width: 1024px) {
-            .lineup-placeholder {
-                font-size: 36px;
-            margin-bottom: 20px;
+        .lineup-djs-placeholder {
+            font-family: 'MiSans', sans-serif;
+            font-size: 14px;
+            color: rgba(245, 241, 240, 0.92);
+            font-style: italic;
+            margin: 0;
+            line-height: 1.55;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        @media (min-width: 768px) {
+            .lineup-djs-placeholder {
+                font-size: 16px;
             }
         }
         
@@ -1850,6 +2001,67 @@
         </button>
     </div>
 
+    <!-- Lineup Section -->
+    <section id="lineup" class="lineup-section">
+        <div class="lineup-overlay"></div>
+        <div class="lineup-content">
+            <div class="afro-deco scale-in"></div>
+            <h2 class="section-title text-gold fade-in-up" style="font-size: 36px; margin-bottom: 40px; transition-delay: 0.2s;">THE SLF26 LINE UP</h2>
+
+            <div class="lineup-grid">
+                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.25s;">
+                    <div class="lineup-video-wrap">
+                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="City Funk Orchestra">
+                            <source src="vids/CityFunkOrchestra.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="lineup-card-scrim" aria-hidden="true"></div>
+                    <div class="lineup-card-text">
+                        <h3 class="lineup-band-name">City Funk Orchestra</h3>
+                        <p class="lineup-band-sub">with Imaani &amp; Mary Pearce</p>
+                    </div>
+                </article>
+                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.35s;">
+                    <div class="lineup-video-wrap">
+                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Shakatak">
+                            <source src="vids/shakatak01.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="lineup-card-scrim" aria-hidden="true"></div>
+                    <div class="lineup-card-text">
+                        <h3 class="lineup-band-name">Shakatak</h3>
+                        <p class="lineup-band-sub">Legendary Funk & Soul Band</p>
+                    </div>
+                </article>
+                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.45s;">
+                    <div class="lineup-video-wrap">
+                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Sasha Bond">
+                            <source src="vids/SashaBond.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="lineup-card-scrim" aria-hidden="true"></div>
+                    <div class="lineup-card-text">
+                        <h3 class="lineup-band-name">Sasha Bond</h3>
+                        <p class="lineup-band-sub">Newcomer to the scene</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="lineup-dj-card fade-in-up" style="transition-delay: 0.55s;">
+                <div class="lineup-video-wrap">
+                    <video class="lineup-card-video" muted loop playsinline preload="metadata" aria-label="DJs">
+                        <!-- Add MP4: <source src="vids/lineup-djs.mp4" type="video/mp4"> -->
+                    </video>
+                </div>
+                <div class="lineup-card-scrim" aria-hidden="true"></div>
+                <div class="lineup-card-text">
+                    <h3>DJs</h3>
+                    <p class="lineup-djs-placeholder">DJ names coming soon — check back for the full bill.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Gallery Section -->
     <section class="gallery-section">
         <video class="gallery-section-video" autoplay muted loop playsinline>
@@ -1888,21 +2100,6 @@
             </div>
         <div class="about-image slide-in-right">
             <div class="deco-circle" style="bottom: -50px; left: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,169,97,0.2) 0%, rgba(0,0,0,0) 70%);"></div>
-        </div>
-    </section>
-
-    <!-- Lineup Section -->
-    <section class="lineup-section">
-        <div class="lineup-overlay"></div>
-        <div class="lineup-content">
-            <div class="afro-deco scale-in"></div>
-            <h2 class="section-title text-gold fade-in-up" style="font-size: 36px; margin-bottom: 50px; transition-delay: 0.2s;">THE SLF26 LINE UP</h2>
-            
-            <div class="lineup-card fade-in-up" style="transition-delay: 0.4s;">
-                <p class="lineup-placeholder">"The Line Up so far:<br>City Funk Orchestra with Imaani & Mary Pearce
-                    Shakatak, and new artist Sasha Bond plus DJs with more artists to be announced soon."</p>
-                <div style="width: 50px; height: 2px; background: var(--primary-orange); margin: 30px auto;"></div>
-                </div>
         </div>
     </section>
 
