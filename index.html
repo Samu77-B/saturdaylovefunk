@@ -1287,6 +1287,16 @@
             }
         }
 
+        /* Sasha Bond: slight zoom on video (cropped by card) */
+        .lineup-band-card--sasha .lineup-video-wrap {
+            overflow: hidden;
+        }
+
+        .lineup-band-card--sasha .lineup-card-video {
+            transform: scale(1.14);
+            transform-origin: center center;
+        }
+
         /* DJs card: same square grid cell, gold title */
         .lineup-band-card--djs .lineup-band-name {
             color: var(--gold);
@@ -2015,7 +2025,7 @@
                         <p class="lineup-band-sub">Legendary Funk & Soul Band</p>
                     </div>
                 </article>
-                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.45s;">
+                <article class="lineup-band-card lineup-band-card--sasha fade-in-up" style="transition-delay: 0.45s;">
                     <div class="lineup-video-wrap">
                         <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Sasha Bond">
                             <source src="vids/SashaBond.mp4" type="video/mp4">

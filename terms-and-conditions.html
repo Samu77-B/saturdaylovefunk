@@ -62,6 +62,52 @@
             list-style: none;
         }
 
+        /* Buttons (match index — header.js uses .btn / .header-btn / .nav-btn) */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-family: 'MiSans', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .btn {
+                padding: 15px 35px;
+                font-size: 13px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .btn {
+                padding: 15px 40px;
+                font-size: 14px;
+            }
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        .btn-fill {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+            color: #fff;
+        }
+
+        .btn-fill:hover {
+            background: #d4481f;
+            border-color: #d4481f;
+        }
+
         /* Header */
         header {
             width: 100%;
@@ -238,10 +284,63 @@
             width: 100%;
         }
 
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .nav-btn {
+            text-align: center;
+            font-size: 13px !important;
+            padding: 14px 25px !important;
+            border-bottom: none !important;
+            border: 2px solid var(--gold) !important;
+        }
+
+        .nav-btn.btn-fill {
+            border-color: var(--primary-orange) !important;
+        }
+
+        nav a.nav-btn::after {
+            display: none !important;
+        }
+
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
+        }
+
+        .header-btn {
+            display: none;
+            font-size: 11px !important;
+            padding: 8px 16px !important;
+            white-space: nowrap;
+        }
+
+        @media (min-width: 768px) {
+            .header-btn {
+                display: inline-block;
+            }
+
+            .header-actions {
+                gap: 12px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header-btn {
+                font-size: 12px !important;
+                padding: 10px 22px !important;
+            }
+
+            .header-actions {
+                gap: 15px;
+            }
         }
 
         .menu-toggle {
