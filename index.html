@@ -382,34 +382,34 @@
         }
 
         .logo img.logo-sponsor-phil {
-            height: 48px;
+            height: 39px;
         }
 
         @media (min-width: 768px) {
             .logo img.logo-sponsor-phil {
-                height: 60px;
+                height: 49px;
             }
         }
 
         @media (min-width: 1024px) {
             .logo img.logo-sponsor-phil {
-                height: 72px;
+                height: 59px;
             }
         }
 
         header.scrolled-up .logo img.logo-sponsor-phil {
-            height: 32px;
+            height: 26px;
         }
 
         @media (min-width: 768px) {
             header.scrolled-up .logo img.logo-sponsor-phil {
-                height: 40px;
+                height: 32px;
             }
         }
 
         @media (min-width: 1024px) {
             header.scrolled-up .logo img.logo-sponsor-phil {
-                height: 48px;
+                height: 39px;
             }
         }
 
@@ -427,9 +427,35 @@
         }
 
         header .logo {
-            gap: 12px;
+            gap: 0;
             min-width: 0;
             max-width: min(100%, calc(100vw - 100px));
+        }
+
+        header .logo > a:nth-of-type(2),
+        header .logo > a:nth-of-type(3) {
+            margin-left: 18px;
+        }
+
+        @media (min-width: 768px) {
+            header .logo > a:nth-of-type(2),
+            header .logo > a:nth-of-type(3) {
+                margin-left: 26px;
+            }
+        }
+
+        footer .logo {
+            gap: 0;
+        }
+
+        footer .logo > a {
+            margin-left: 18px;
+        }
+
+        @media (min-width: 768px) {
+            footer .logo > a {
+                margin-left: 26px;
+            }
         }
 
         @media (max-width: 640px) {
@@ -442,11 +468,11 @@
             }
 
             header .logo img.logo-sponsor-phil {
-                height: 30px;
+                height: 24px;
             }
 
             header.scrolled-up .logo img.logo-sponsor-phil {
-                height: 22px;
+                height: 18px;
             }
         }
 
@@ -2479,8 +2505,8 @@
     <div id="footer-container"></div>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=6"></script>
-    <script src="components/footer.js?v=4"></script>
+    <script src="components/header.js?v=8"></script>
+    <script src="components/footer.js?v=6"></script>
     <script src="components/led-meter.js"></script>
 
     <script>
