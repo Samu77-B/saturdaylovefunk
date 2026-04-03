@@ -10,10 +10,12 @@
         <footer>
             <div class="footer-col">
                 <div class="logo" style="margin-bottom: 20px;">
-                    <img src="sfl-winkworth-wht.png" alt="Saturday Love Funk">
+                    <img src="SLF-Logo.png" alt="Saturday Love Funk">
+                    <a href="https://www.winkworth.co.uk/estate-agents/palmers-green" target="_blank" rel="noopener noreferrer"><img src="Sponsor-Wink.png" alt="Winkworth"></a>
+                    <a href="https://www.instagram.com/philanthropylondon/?hl=en" target="_blank" rel="noopener noreferrer"><img src="Sponsor-Phil.png" alt="Philanthropy London" class="logo-sponsor-phil"></a>
                 </div>
                 <p>Promoter: Saturday Love Funk</p>
-                <p>Sponsor: Winkworth</p>
+                <p>Sponsors: Winkworth &amp; Philanthropy London</p>
             </div>
             <div class="footer-col">
                 <h4>Event Details</h4>

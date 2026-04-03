@@ -12,7 +12,9 @@
         <!-- Header -->
         <header>
             <div class="logo">
-                <a href="index.html"><img src="sfl-winkworth-wht.png" alt="Saturday Love Funk"></a>
+                <a href="index.html"><img src="SLF-Logo.png" alt="Saturday Love Funk"></a>
+                <a href="https://www.winkworth.co.uk/estate-agents/palmers-green" target="_blank" rel="noopener noreferrer"><img src="Sponsor-Wink.png" alt="Winkworth"></a>
+                <a href="https://www.instagram.com/philanthropylondon/?hl=en" target="_blank" rel="noopener noreferrer"><img src="Sponsor-Phil.png" alt="Philanthropy London" class="logo-sponsor-phil"></a>
             </div>
             <nav id="mainNav">
                 <ul>
@@ -31,7 +33,6 @@
             <div class="header-actions">
                 <a href="https://urnextevent.com/events/saturday-love-all-dayer-2026" target="_blank" class="btn btn-fill header-btn">BUY NOW SLF26</a>
                 <a href="index.html#lineup" class="btn header-btn">The Line Up</a>
-                <a href="index.html#upcoming-events" class="btn header-btn">Upcoming Events</a>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                     <i class="ri-menu-line"></i>
                 </button>

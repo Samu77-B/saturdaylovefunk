@@ -208,6 +208,38 @@
             }
         }
 
+        .logo img.logo-sponsor-phil {
+            height: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .logo img.logo-sponsor-phil {
+                height: 60px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .logo img.logo-sponsor-phil {
+                height: 72px;
+            }
+        }
+
+        header.scrolled-up .logo img.logo-sponsor-phil {
+            height: 32px;
+        }
+
+        @media (min-width: 768px) {
+            header.scrolled-up .logo img.logo-sponsor-phil {
+                height: 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            header.scrolled-up .logo img.logo-sponsor-phil {
+                height: 48px;
+            }
+        }
+
         .logo i {
             display: none;
         }
@@ -219,6 +251,30 @@
 
         .logo a:hover {
             opacity: 0.8;
+        }
+
+        header .logo {
+            gap: 12px;
+            min-width: 0;
+            max-width: min(100%, calc(100vw - 100px));
+        }
+
+        @media (max-width: 640px) {
+            header .logo img {
+                height: 38px;
+            }
+
+            header.scrolled-up .logo img {
+                height: 28px;
+            }
+
+            header .logo img.logo-sponsor-phil {
+                height: 30px;
+            }
+
+            header.scrolled-up .logo img.logo-sponsor-phil {
+                height: 22px;
+            }
         }
 
         nav {
@@ -1123,8 +1179,8 @@
     </script>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=2"></script>
-    <script src="components/footer.js"></script>
+    <script src="components/header.js?v=6"></script>
+    <script src="components/footer.js?v=4"></script>
 </body>
 </html>
 
