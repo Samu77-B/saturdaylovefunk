@@ -123,8 +123,8 @@
             width: 100%;
             padding: 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            align-items: stretch;
             background: rgba(10, 10, 10, 0.95);
             border-bottom: 1px solid rgba(201, 169, 97, 0.2);
             position: fixed;
@@ -135,12 +135,56 @@
             transition: padding 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .header-bar {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            width: 100%;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .header-left {
+            justify-self: start;
+            min-width: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-sponsors {
+            justify-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 0;
+            max-width: min(58vw, 420px);
+        }
+
+        .header-sponsors-logos {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .header-sponsors-logos {
+                gap: 26px;
+            }
+        }
+
         header.scrolled-up {
             padding: 12px 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        header.scrolled-up .logo img {
+        header.scrolled-up .header-left .logo img {
+            height: 40px;
+        }
+
+        header.scrolled-up .header-sponsors .logo-sponsor-wink-wrap img {
             height: 40px;
         }
 
@@ -157,7 +201,11 @@
                 padding: 15px 30px;
             }
 
-            header.scrolled-up .logo img {
+            header.scrolled-up .header-left .logo img {
+                height: 50px;
+            }
+
+            header.scrolled-up .header-sponsors .logo-sponsor-wink-wrap img {
                 height: 50px;
             }
 
@@ -175,7 +223,11 @@
                 padding: 15px 60px;
             }
 
-            header.scrolled-up .logo img {
+            header.scrolled-up .header-left .logo img {
+                height: 60px;
+            }
+
+            header.scrolled-up .header-sponsors .logo-sponsor-wink-wrap img {
                 height: 60px;
             }
 
@@ -208,35 +260,59 @@
             }
         }
 
-        .logo img.logo-sponsor-phil {
+        .logo img.logo-sponsor-phil,
+        .header-sponsors img.logo-sponsor-phil {
             height: 39px;
         }
 
         @media (min-width: 768px) {
-            .logo img.logo-sponsor-phil {
+            .logo img.logo-sponsor-phil,
+            .header-sponsors img.logo-sponsor-phil {
                 height: 49px;
             }
         }
 
         @media (min-width: 1024px) {
-            .logo img.logo-sponsor-phil {
+            .logo img.logo-sponsor-phil,
+            .header-sponsors img.logo-sponsor-phil {
                 height: 59px;
             }
         }
 
-        header.scrolled-up .logo img.logo-sponsor-phil {
+        header.scrolled-up .logo img.logo-sponsor-phil,
+        header.scrolled-up .header-sponsors img.logo-sponsor-phil {
             height: 26px;
         }
 
         @media (min-width: 768px) {
-            header.scrolled-up .logo img.logo-sponsor-phil {
+            header.scrolled-up .logo img.logo-sponsor-phil,
+            header.scrolled-up .header-sponsors img.logo-sponsor-phil {
                 height: 32px;
             }
         }
 
         @media (min-width: 1024px) {
-            header.scrolled-up .logo img.logo-sponsor-phil {
+            header.scrolled-up .logo img.logo-sponsor-phil,
+            header.scrolled-up .header-sponsors img.logo-sponsor-phil {
                 height: 39px;
+            }
+        }
+
+        .header-sponsors .logo-sponsor-wink-wrap img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
+            .header-sponsors .logo-sponsor-wink-wrap img {
+                height: 75px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header-sponsors .logo-sponsor-wink-wrap img {
+                height: 90px;
             }
         }
 
@@ -253,52 +329,97 @@
             opacity: 0.8;
         }
 
-        header .logo {
-            gap: 0;
+        .header-sponsors a {
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .header-sponsors a:hover {
+            opacity: 0.8;
+        }
+
+        .logo-sponsor-wink-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             min-width: 0;
-            max-width: min(100%, calc(100vw - 100px));
         }
 
-        header .logo > a:nth-of-type(2),
-        header .logo > a:nth-of-type(3) {
-            margin-left: 18px;
+        .logo-sponsor-wink-label {
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+            color: #fff;
+            line-height: 1.15;
         }
 
-        @media (min-width: 768px) {
-            header .logo > a:nth-of-type(2),
-            header .logo > a:nth-of-type(3) {
-                margin-left: 26px;
-            }
+        .header-sponsors .logo-sponsor-wink-label {
+            font-size: clamp(14px, 3.5vw, 20px);
+            margin-bottom: 8px;
+            text-align: center;
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+        }
+
+        header.scrolled-up .header-sponsors .logo-sponsor-wink-label {
+            font-size: clamp(12px, 3vw, 16px);
+            margin-bottom: 4px;
+        }
+
+        .footer-sponsors-block .logo-sponsor-wink-label {
+            font-size: 18px;
+            margin-bottom: 8px;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+
+        .footer-sponsors-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 0;
         }
 
         footer .logo {
             gap: 0;
         }
 
-        footer .logo > a {
+        footer .logo > :nth-child(n+2) {
             margin-left: 18px;
         }
 
         @media (min-width: 768px) {
-            footer .logo > a {
+            footer .logo > :nth-child(n+2) {
                 margin-left: 26px;
             }
         }
 
         @media (max-width: 640px) {
-            header .logo img {
+            header .header-left .logo img {
                 height: 38px;
             }
 
-            header.scrolled-up .logo img {
+            header.scrolled-up .header-left .logo img {
                 height: 28px;
             }
 
-            header .logo img.logo-sponsor-phil {
+            header .header-sponsors .logo-sponsor-wink-wrap img {
+                height: 38px;
+            }
+
+            header.scrolled-up .header-sponsors .logo-sponsor-wink-wrap img {
+                height: 28px;
+            }
+
+            header .logo img.logo-sponsor-phil,
+            header .header-sponsors img.logo-sponsor-phil {
                 height: 24px;
             }
 
-            header.scrolled-up .logo img.logo-sponsor-phil {
+            header.scrolled-up .logo img.logo-sponsor-phil,
+            header.scrolled-up .header-sponsors img.logo-sponsor-phil {
                 height: 18px;
             }
         }
@@ -405,6 +526,9 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            justify-self: end;
+            position: relative;
+            z-index: 2;
         }
 
         .header-btn {
@@ -1205,8 +1329,8 @@
     </script>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=8"></script>
-    <script src="components/footer.js?v=6"></script>
+    <script src="components/header.js?v=11"></script>
+    <script src="components/footer.js?v=8"></script>
 </body>
 </html>
 

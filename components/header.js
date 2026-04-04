@@ -11,10 +11,26 @@
 
         <!-- Header -->
         <header>
-            <div class="logo">
-                <a href="index.html"><img src="SLF-Logo.png" alt="Saturday Love Funk"></a>
-                <a href="https://www.winkworth.co.uk/estate-agents/palmers-green" target="_blank" rel="noopener noreferrer"><img src="Sponsor-Wink.png" alt="Winkworth"></a>
-                <a href="https://www.instagram.com/philanthropylondon/?hl=en" target="_blank" rel="noopener noreferrer"><img src="Sponsor-Phil.png" alt="Philanthropy London" class="logo-sponsor-phil"></a>
+            <div class="header-bar">
+                <div class="header-left">
+                    <div class="logo logo-header-brand">
+                        <a href="index.html"><img src="SLF-Logo.png" alt="Saturday Love Funk"></a>
+                    </div>
+                </div>
+                <div class="header-sponsors">
+                    <span class="logo-sponsor-wink-label">Our Main Sponsors</span>
+                    <div class="header-sponsors-logos">
+                        <div class="logo-sponsor-wink-wrap">
+                            <a href="https://www.winkworth.co.uk/estate-agents/palmers-green" target="_blank" rel="noopener noreferrer"><img src="Sponsor-Wink2.png" alt="Winkworth"></a>
+                        </div>
+                        <a href="https://www.instagram.com/philanthropylondon/?hl=en" target="_blank" rel="noopener noreferrer"><img src="Sponsor-Phil.png" alt="Philanthropy London" class="logo-sponsor-phil"></a>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
             </div>
             <nav id="mainNav">
                 <ul>
@@ -30,13 +46,6 @@
                     <a href="index.html#upcoming-events" class="btn nav-btn">Upcoming Events</a>
                 </div>
             </nav>
-            <div class="header-actions">
-                <a href="https://urnextevent.com/events/saturday-love-all-dayer-2026" target="_blank" class="btn btn-fill header-btn">BUY NOW SLF26</a>
-                <a href="index.html#lineup" class="btn header-btn">The Line Up</a>
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                    <i class="ri-menu-line"></i>
-                </button>
-            </div>
         </header>
     `;
 
