@@ -41,6 +41,12 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Saturday Love Funk. All Rights Reserved.</p>
             <p>Website designed, built and maintained by <a href="https://paradigmstudio.net/" target="_blank" rel="noopener noreferrer">Paradigm Studio</a></p>
+            <div class="footer-powered-by" aria-label="Event platform">
+                <span class="footer-powered-by-label">Powered by</span>
+                <a href="https://urnextevent.com/" target="_blank" rel="noopener noreferrer" class="footer-powered-by-link">
+                    <img src="urnextevent-logo.png" alt="urnextevent.com" class="footer-powered-by-logo">
+                </a>
+            </div>
         </div>
     `;
 

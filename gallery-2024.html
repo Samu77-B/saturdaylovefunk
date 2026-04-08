@@ -988,6 +988,38 @@
         .footer-bottom a:hover {
             color: var(--primary-orange);
         }
+
+        .footer-powered-by {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .footer-powered-by-label {
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        .footer-powered-by-link {
+            display: inline-block;
+            line-height: 0;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .footer-powered-by-link:hover {
+            opacity: 1;
+        }
+
+        .footer-powered-by-logo {
+            height: clamp(24px, 5vw, 36px);
+            width: auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -1330,7 +1362,7 @@
 
     <!-- Reusable Components -->
     <script src="components/header.js?v=11"></script>
-    <script src="components/footer.js?v=8"></script>
+    <script src="components/footer.js?v=9"></script>
 </body>
 </html>
 
