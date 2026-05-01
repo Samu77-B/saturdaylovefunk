@@ -42,6 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/super-brave-2" rel="stylesheet">
     <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf" as="font" type="font/otf" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
@@ -904,10 +905,26 @@
             letter-spacing: 1px;
         }
 
+        .hero-groove-line {
+            font-family: 'Super Brave', 'Anton', Impact, 'Arial Black', sans-serif;
+            font-size: 18px;
+            line-height: 1.15;
+            margin: -8px 0 18px 0;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
         @media (min-width: 768px) {
             .hero-title {
                 font-size: 56px;
                 margin-bottom: 25px;
+            }
+
+            .hero-groove-line {
+                font-size: 22px;
+                margin: -10px 0 22px 0;
             }
         }
 
@@ -915,6 +932,11 @@
             .hero-title {
                 font-size: 72px;
                 margin-bottom: 30px;
+            }
+
+            .hero-groove-line {
+                font-size: 26px;
+                margin: -12px 0 24px 0;
             }
         }
 
@@ -1219,7 +1241,7 @@
         }
 
         .section-title {
-            font-family: 'Anton', Impact, 'Arial Black', sans-serif;
+            font-family: 'Super Brave', 'Anton', Impact, 'Arial Black', sans-serif;
             font-size: 32px;
             color: var(--text-light);
             margin-bottom: 20px;
@@ -1894,7 +1916,7 @@
         }
 
         .newsletter-title {
-            font-family: 'Anton', Impact, 'Arial Black', sans-serif;
+            font-family: 'Super Brave', 'Anton', Impact, 'Arial Black', sans-serif;
             font-size: 24px;
             color: #fff;
             margin-bottom: 12px;
@@ -2367,6 +2389,7 @@
         <div class="hero-content fade-in-up">
             <p class="hero-tagline fade-in-up" style="transition-delay: 0.2s;">Experience The Atmosphere</p>
             <h1 class="hero-title fade-in-up" style="transition-delay: 0.4s;">Saturday Love<br>All-Dayer #3</h1>
+            <p class="hero-groove-line fade-in-up" style="transition-delay: 0.5s;">Jazz Funk Soul &amp; Groove Festival</p>
             <p class="hero-subtitle fade-in-up" style="transition-delay: 0.6s;">Our 3rd All Dayer is Coming 11th July `Summer 2026</p>
             <a href="https://urnextevent.com/events/saturday-love-all-dayer-2026" target="_blank" class="btn btn-fill fade-in-up" style="transition-delay: 0.8s; padding: 18px 50px; font-size: 18px;">Buy Now</a>
         </div>
@@ -2447,7 +2470,18 @@
                         <p class="lineup-band-sub">and her band Askalberto</p>
                     </div>
                 </article>
-                <article class="lineup-band-card lineup-band-card--djs fade-in-up" style="transition-delay: 0.55s;">
+                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.55s;">
+                    <div class="lineup-video-wrap">
+                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Ernie and The Family McKone">
+                            <source src="vids/Ernie.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="lineup-card-scrim" aria-hidden="true"></div>
+                    <div class="lineup-card-text">
+                        <h3 class="lineup-band-name">Ernie and The Family McKone</h3>
+                    </div>
+                </article>
+                <article class="lineup-band-card lineup-band-card--djs fade-in-up" style="transition-delay: 0.65s;">
                     <div class="lineup-video-wrap">
                         <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="DJs at Saturday Love Funk">
                             <source src="vids/SLF-DJ.mp4" type="video/mp4">
@@ -2457,6 +2491,13 @@
                     <div class="lineup-card-text">
                         <h3 class="lineup-band-name">DJs</h3>
                         <p class="lineup-band-sub">Richie Tee (Diverse FM, Jazz FM)<br>Keith Robles (Crackers Radio)<br>Paul Lewis (Solar Radio)<br>Richard Marzetti (Solar Radio)</p>
+                    </div>
+                </article>
+                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.75s;">
+                    <div class="lineup-video-wrap">
+                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Saturday Love Funk 2024">
+                            <source src="vids/SLF2024.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </article>
             </div>
