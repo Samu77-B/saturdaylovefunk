@@ -1373,7 +1373,7 @@
         .lineup-content {
             position: relative;
             z-index: 2;
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
         }
 
@@ -1381,7 +1381,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 8px;
         }
@@ -1393,10 +1393,19 @@
             }
         }
 
-        @media (min-width: 1100px) {
+        /* Three columns = two even rows for six acts (avoids 4+2 orphan row) */
+        @media (min-width: 900px) {
             .lineup-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 22px;
+                padding: 0 12px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .lineup-grid {
+                gap: 26px;
+                max-width: 1240px;
             }
         }
 
@@ -1487,16 +1496,16 @@
             }
         }
 
-        /* Slightly tighter band titles when four columns */
-        @media (min-width: 1100px) {
+        /* Three-column layout: titles sized for wider cells than old four-up grid */
+        @media (min-width: 900px) {
             .lineup-grid .lineup-band-card:not(.lineup-band-card--djs) .lineup-band-name {
-                font-size: 16px;
+                font-size: 18px;
             }
         }
 
         @media (min-width: 1280px) {
             .lineup-grid .lineup-band-card:not(.lineup-band-card--djs) .lineup-band-name {
-                font-size: 18px;
+                font-size: 20px;
             }
         }
 
@@ -1540,7 +1549,7 @@
             }
         }
 
-        @media (min-width: 1100px) {
+        @media (min-width: 900px) {
             .lineup-band-card--djs .lineup-band-name {
                 font-size: 17px;
             }
