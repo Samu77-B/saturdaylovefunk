@@ -27,8 +27,9 @@
                     </div>
                 </div>
                 <div class="header-actions">
-                    <a href="https://open.spotify.com/user/31l67ucegyd54r3r3kczdbnoikim?si=b9f49e3e56b34b87" target="_blank" rel="noopener noreferrer" class="header-spotify-link" aria-label="Saturday Love Funk on Spotify">
+                    <a href="https://open.spotify.com/user/31l67ucegyd54r3r3kczdbnoikim?si=b9f49e3e56b34b87" target="_blank" rel="noopener noreferrer" class="header-spotify-link" aria-label="SLF Sound Tracks on Spotify">
                         <i class="ri-spotify-fill" aria-hidden="true"></i>
+                        <span class="header-spotify-label">SLF Sound Tracks</span>
                     </a>
                     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                         <i class="ri-menu-line"></i>

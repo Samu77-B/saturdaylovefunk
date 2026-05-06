@@ -522,14 +522,32 @@
         }
 
         .header-spotify-link {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             color: var(--text-light);
-            font-size: clamp(28px, 5.5vw, 40px);
             line-height: 1;
             opacity: 0.95;
             transition: color 0.3s ease, opacity 0.3s ease;
+            text-decoration: none;
+            min-width: 0;
+        }
+
+        .header-spotify-link i {
+            font-size: clamp(26px, 5vw, 38px);
+            flex-shrink: 0;
+        }
+
+        .header-spotify-label {
+            font-family: 'MiSans', sans-serif;
+            font-size: clamp(9px, 2.4vw, 12px);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: inherit;
+            line-height: 1.15;
+            text-align: left;
+            max-width: 10em;
         }
 
         .header-spotify-link:hover {
@@ -537,8 +555,12 @@
             opacity: 1;
         }
 
-        header.scrolled-up .header-spotify-link {
-            font-size: clamp(24px, 5vw, 36px);
+        header.scrolled-up .header-spotify-link i {
+            font-size: clamp(22px, 4.5vw, 32px);
+        }
+
+        header.scrolled-up .header-spotify-label {
+            font-size: clamp(8px, 2.1vw, 11px);
         }
 
         .header-btn {
@@ -988,7 +1010,7 @@
     <div id="footer-container"></div>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=12"></script>
+    <script src="components/header.js?v=13"></script>
     <script src="components/footer.js?v=9"></script>
 
 </body>
