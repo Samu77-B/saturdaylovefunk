@@ -100,6 +100,25 @@
       .logo img.logo-sponsor-phil,.header-sponsors img.logo-sponsor-phil{height:59px}
       footer{padding:80px 100px;flex-wrap:nowrap} .footer-col{width:auto}
     }
+    @media (max-width:767px){
+      header{padding:12px 14px 10px}
+      header.scrolled-up{padding:8px 14px 8px}
+      .header-bar{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;column-gap:8px;row-gap:8px;align-items:center}
+      .header-left{grid-column:1;grid-row:1}
+      .header-actions{grid-column:2;grid-row:1;justify-self:end;gap:6px;flex-shrink:0}
+      .header-sponsors{grid-column:1/-1;grid-row:2;justify-self:stretch;width:100%;max-width:100%}
+      .header-sponsors .logo-sponsor-wink-label{margin-bottom:4px}
+      .header-sponsors-logos{gap:10px}
+      .menu-toggle{font-size:40px;padding:2px 4px;line-height:1}
+      header.scrolled-up .menu-toggle{font-size:34px}
+      .header-spotify-link{gap:5px}
+      .header-spotify-link i{font-size:28px}
+      header.scrolled-up .header-spotify-link i{font-size:24px}
+      .header-spotify-label{font-size:8px;letter-spacing:.02em;max-width:7.2em}
+      header.scrolled-up .header-spotify-label{font-size:7px}
+      nav{padding-top:125px}
+      main{padding-top:132px}
+    }
   </style>
 </head>
 <body>

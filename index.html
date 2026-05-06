@@ -598,6 +598,91 @@
             }
         }
 
+        /* Mobile / narrow: stack sponsors under logo + actions so bar does not crowd */
+        @media (max-width: 767px) {
+            header {
+                padding: 12px 14px 10px;
+            }
+
+            header.scrolled-up {
+                padding: 8px 14px 8px;
+            }
+
+            .header-bar {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                grid-template-rows: auto auto;
+                column-gap: 8px;
+                row-gap: 8px;
+                align-items: center;
+            }
+
+            .header-left {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .header-actions {
+                grid-column: 2;
+                grid-row: 1;
+                justify-self: end;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+
+            .header-sponsors {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                justify-self: stretch;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .header-sponsors .logo-sponsor-wink-label {
+                margin-bottom: 4px;
+            }
+
+            .header-sponsors-logos {
+                gap: 10px;
+            }
+
+            .menu-toggle {
+                font-size: 40px;
+                padding: 2px 4px;
+                line-height: 1;
+            }
+
+            header.scrolled-up .menu-toggle {
+                font-size: 34px;
+            }
+
+            .header-spotify-link {
+                gap: 5px;
+            }
+
+            .header-spotify-link i {
+                font-size: 28px;
+            }
+
+            header.scrolled-up .header-spotify-link i {
+                font-size: 24px;
+            }
+
+            .header-spotify-label {
+                font-size: 8px;
+                letter-spacing: 0.02em;
+                max-width: 7.2em;
+            }
+
+            header.scrolled-up .header-spotify-label {
+                font-size: 7px;
+            }
+
+            .hero {
+                margin-top: 128px;
+            }
+        }
+
         nav {
             display: block;
             position: fixed;
@@ -630,6 +715,12 @@
             nav {
                 width: 400px;
                 padding: 100px 40px 40px 40px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            nav {
+                padding-top: 125px;
             }
         }
 
@@ -1380,6 +1471,36 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .gallery-playlists {
+            width: 100%;
+            max-width: 660px;
+            margin: 32px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .gallery-playlist-label {
+            font-family: 'MiSans', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gold);
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .gallery-playlist-item iframe {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: 352px;
+            border: 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
         }
 
         /* Lineup Section */
@@ -2570,7 +2691,7 @@
             <div class="section-label fade-in" style="justify-content: center;">Event Galleries</div>
             <h2 class="section-title fade-in-up" style="transition-delay: 0.2s;">Relive The <span class="text-orange">Memories</span></h2>
             <p style="color: rgba(255,255,255,0.9); margin-bottom: 24px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto; transition-delay: 0.3s;" class="fade-in-up">
-                Browse through photos from our past events at Broomfield Park
+                Browse through the sites and sounds from our past events at Broomfield Park
             </p>
             <div id="led-meter-root" class="fade-in-up" style="transition-delay: 0.35s;" aria-hidden="true"></div>
             <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 600px; margin: 0 auto; transition-delay: 0.4s;" class="fade-in-up">
@@ -2582,6 +2703,20 @@
                     <i class="ri-image-line"></i>
                     View 2025 Gallery
                 </a>
+            </div>
+            <div class="gallery-playlists fade-in-up" style="transition-delay: 0.45s;">
+                <div class="gallery-playlist-item">
+                    <p class="gallery-playlist-label">Saturday Love #1 · 2024</p>
+                    <iframe title="Spotify: Saturday Love #1 playlist (2024)" src="https://open.spotify.com/embed/playlist/6z4HyNeOMIaS5A1E0lPECr?utm_source=generator" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="gallery-playlist-item">
+                    <p class="gallery-playlist-label">Saturday Love #2 · 2025</p>
+                    <iframe title="Spotify: Saturday Love #2 playlist (2025)" src="https://open.spotify.com/embed/playlist/6TpGJn8OZ3UFWNh2Fzen87?utm_source=generator" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="gallery-playlist-item">
+                    <p class="gallery-playlist-label">Saturday Love #3 · 2026</p>
+                    <iframe title="Spotify: Saturday Love #3 playlist (2026)" src="https://open.spotify.com/embed/playlist/24i9CyqJjFHlNHxHI712ue?utm_source=generator" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
     </section>
