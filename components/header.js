@@ -27,6 +27,9 @@
                     </div>
                 </div>
                 <div class="header-actions">
+                    <a href="https://open.spotify.com/user/31l67ucegyd54r3r3kczdbnoikim?si=b9f49e3e56b34b87" target="_blank" rel="noopener noreferrer" class="header-spotify-link" aria-label="Saturday Love Funk on Spotify">
+                        <i class="ri-spotify-fill" aria-hidden="true"></i>
+                    </a>
                     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                         <i class="ri-menu-line"></i>
                     </button>
@@ -38,6 +41,7 @@
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#lineup">The Line Up</a></li>
                     <li><a href="gallery-2024.html">Gallery</a></li>
+                    <li><a href="https://open.spotify.com/user/31l67ucegyd54r3r3kczdbnoikim?si=b9f49e3e56b34b87" target="_blank" rel="noopener noreferrer">Spotify</a></li>
                     <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
                 <div class="nav-buttons">

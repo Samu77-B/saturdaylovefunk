@@ -709,6 +709,26 @@
             z-index: 2;
         }
 
+        .header-spotify-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: clamp(28px, 5.5vw, 40px);
+            line-height: 1;
+            opacity: 0.95;
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+
+        .header-spotify-link:hover {
+            color: #1ed760;
+            opacity: 1;
+        }
+
+        header.scrolled-up .header-spotify-link {
+            font-size: clamp(24px, 5vw, 36px);
+        }
+
         .header-btn {
             display: none;
             font-size: 11px !important;
@@ -1411,6 +1431,7 @@
 
         /* Card = full-bleed video with text overlaid at bottom */
         .lineup-band-card {
+            display: block;
             position: relative;
             overflow: hidden;
             border: 2px solid var(--gold);
@@ -2443,7 +2464,7 @@
             <h2 class="section-title text-gold fade-in-up" style="font-size: 36px; margin-bottom: 40px; transition-delay: 0.2s;">THE SLF26 LINE UP</h2>
 
             <div class="lineup-grid">
-                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.25s;">
+                <a class="lineup-band-card fade-in-up" style="transition-delay: 0.25s;" href="lineup-city-funk-orchestra.html" aria-label="City Funk Orchestra - view details">
                     <div class="lineup-video-wrap">
                         <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="City Funk Orchestra">
                             <source src="vids/CFO_01.mp4" type="video/mp4">
@@ -2452,10 +2473,10 @@
                     <div class="lineup-card-scrim" aria-hidden="true"></div>
                     <div class="lineup-card-text">
                         <h3 class="lineup-band-name">City Funk Orchestra</h3>
-                        <p class="lineup-band-sub">with Imaani &amp; Mary Pearce</p>
+                        <p class="lineup-band-sub">feat. Imaani &amp; Mary Pearce</p>
                     </div>
-                </article>
-                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.35s;">
+                </a>
+                <a class="lineup-band-card fade-in-up" style="transition-delay: 0.35s;" href="lineup-shakatak.html" aria-label="Shakatak - view details">
                     <div class="lineup-video-wrap">
                         <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Shakatak">
                             <source src="vids/SLF_Shakatak.mp4" type="video/mp4">
@@ -2464,22 +2485,22 @@
                     <div class="lineup-card-scrim" aria-hidden="true"></div>
                     <div class="lineup-card-text">
                         <h3 class="lineup-band-name">Shakatak</h3>
-                        <p class="lineup-band-sub">Legendary Funk & Soul Band</p>
+                        <p class="lineup-band-sub">Legendary Funk &amp; Soul Band</p>
                     </div>
-                </article>
-                <article class="lineup-band-card lineup-band-card--sasha fade-in-up" style="transition-delay: 0.45s;">
+                </a>
+                <a class="lineup-band-card lineup-band-card--sasha fade-in-up" style="transition-delay: 0.45s;" href="lineup-sasha-bond.html" aria-label="Sasha Jane Bond - view details">
                     <div class="lineup-video-wrap">
-                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Sasha Bond">
+                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Sasha Jane Bond">
                             <source src="vids/SashaBond.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="lineup-card-scrim" aria-hidden="true"></div>
                     <div class="lineup-card-text">
-                        <h3 class="lineup-band-name">Sasha Bond</h3>
+                        <h3 class="lineup-band-name">Sasha Jane Bond</h3>
                         <p class="lineup-band-sub">and her band Askalberto</p>
                     </div>
-                </article>
-                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.55s;">
+                </a>
+                <a class="lineup-band-card fade-in-up" style="transition-delay: 0.55s;" href="lineup-ernie-and-the-family-mckone.html" aria-label="Ernie and The Family McKone - view details">
                     <div class="lineup-video-wrap">
                         <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Ernie and The Family McKone">
                             <source src="vids/Ernie.mp4" type="video/mp4">
@@ -2489,8 +2510,8 @@
                     <div class="lineup-card-text">
                         <h3 class="lineup-band-name">Ernie and The Family McKone</h3>
                     </div>
-                </article>
-                <article class="lineup-band-card fade-in-up" style="transition-delay: 0.65s;">
+                </a>
+                <a class="lineup-band-card fade-in-up" style="transition-delay: 0.65s;" href="lineup-gavin-holligan-richie-tee.html" aria-label="PA by Gavin Holligan + Q&amp;A hosted by Richie Tee - view details">
                     <div class="lineup-video-wrap">
                         <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="PA by Gavin Holligan + Q&amp;A hosted by Richie Tee">
                             <source src="vids/GavinHolligan02.mp4" type="video/mp4">
@@ -2500,8 +2521,8 @@
                     <div class="lineup-card-text">
                         <h3 class="lineup-band-name">PA by Gavin Holligan + Q&amp;A hosted by Richie Tee</h3>
                     </div>
-                </article>
-                <article class="lineup-band-card lineup-band-card--djs fade-in-up" style="transition-delay: 0.75s;">
+                </a>
+                <a class="lineup-band-card lineup-band-card--djs fade-in-up" style="transition-delay: 0.75s;" href="lineup-djs.html" aria-label="DJs - view details">
                     <div class="lineup-video-wrap">
                         <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="DJs at Saturday Love Funk">
                             <source src="vids/SLF-DJ.mp4" type="video/mp4">
@@ -2512,7 +2533,7 @@
                         <h3 class="lineup-band-name">DJs</h3>
                         <p class="lineup-band-sub">Richie Tee (Diverse FM, Jazz FM)<br>Keith Robles (Crackers Radio)<br>Paul Lewis (Solar Radio)<br>Richard Marzetti (Solar Radio)</p>
                     </div>
-                </article>
+                </a>
             </div>
         </div>
     </section>
@@ -2715,7 +2736,7 @@
     <div id="footer-container"></div>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=11"></script>
+    <script src="components/header.js?v=12"></script>
     <script src="components/footer.js?v=9"></script>
     <script src="components/led-meter.js"></script>
 

@@ -531,6 +531,26 @@
             z-index: 2;
         }
 
+        .header-spotify-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: clamp(28px, 5.5vw, 40px);
+            line-height: 1;
+            opacity: 0.95;
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+
+        .header-spotify-link:hover {
+            color: #1ed760;
+            opacity: 1;
+        }
+
+        header.scrolled-up .header-spotify-link {
+            font-size: clamp(24px, 5vw, 36px);
+        }
+
         .header-btn {
             display: none;
             font-size: 11px !important;
@@ -1361,7 +1381,7 @@
     </script>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=11"></script>
+    <script src="components/header.js?v=12"></script>
     <script src="components/footer.js?v=9"></script>
 </body>
 </html>
