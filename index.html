@@ -1503,6 +1503,87 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
         }
 
+        /* Sponsors Section */
+        .sponsors-section {
+            position: relative;
+            padding: 60px 20px;
+            background: #0a0a0a;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .sponsors-section {
+                padding: 90px 40px;
+            }
+        }
+
+        .sponsors-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sponsors-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 860px;
+            margin: 0 auto 28px;
+        }
+
+        @media (min-width: 768px) {
+            .sponsors-text {
+                font-size: 17px;
+                margin-bottom: 34px;
+            }
+        }
+
+        .sponsors-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-top: 26px;
+        }
+
+        .sponsors-logos img {
+            display: block;
+            max-width: min(320px, 80vw);
+            height: 82px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+        }
+
+        .sponsors-logos a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sponsors-logos a:hover img {
+            transform: translateY(-2px);
+            filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.55));
+        }
+
+        .sponsors-logos img {
+            transition: transform 200ms ease, filter 200ms ease;
+        }
+
+        .sponsors-logos img.sponsors-logo--phil {
+            height: 66px; /* 82px * 0.8 */
+        }
+
+        @media (min-width: 768px) {
+            .sponsors-logos img {
+                height: 96px;
+            }
+
+            .sponsors-logos img.sponsors-logo--phil {
+                height: 77px; /* 96px * 0.8 */
+            }
+        }
+
         /* Lineup Section */
         .lineup-section {
             position: relative;
@@ -2598,6 +2679,27 @@
             Share This Event
         </button>
     </div>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="sponsors-section">
+        <div class="sponsors-inner">
+            <h2 class="section-title text-gold fade-in-up" style="font-size: 36px; margin-bottom: 20px; transition-delay: 0.2s;">Our Sponsors</h2>
+            <p class="sponsors-text fade-in-up" style="transition-delay: 0.3s;">
+                We would like to say a huge thanks to our two main sponsors Winkworths Estate Agents and Philanthropy CIC.
+            </p>
+            <p class="sponsors-text fade-in-up" style="transition-delay: 0.4s; margin-bottom: 0;">
+                Both major businesses in Palmers Green who are supporting us and allowing Saturday Love Funk to bring great jazz funk, soul and groove music to the area at such a reasonable cost to the fans.
+            </p>
+            <div class="sponsors-logos fade-in-up" style="transition-delay: 0.5s;">
+                <a href="sponsor-winkworth.html" aria-label="Read about Winkworth Palmers Green">
+                    <img src="Sponsor-Wink.png" alt="Winkworths Estate Agents logo" loading="lazy" decoding="async">
+                </a>
+                <a href="sponsor-philanthropy.html" aria-label="Read about Philanthropy London">
+                    <img class="sponsors-logo--phil" src="Sponsor-Phil.png" alt="Philanthropy CIC logo" loading="lazy" decoding="async">
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Lineup Section -->
     <section id="lineup" class="lineup-section">
