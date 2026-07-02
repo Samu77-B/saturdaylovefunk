@@ -1821,6 +1821,127 @@
                 font-size: 16px;
             }
         }
+
+        .lineup-schedule {
+            margin-top: 56px;
+            padding: 0 8px;
+            text-align: left;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+            .lineup-schedule {
+                margin-top: 72px;
+                padding: 0 12px;
+            }
+        }
+
+        .lineup-schedule-title {
+            font-family: 'Super Brave', 'Anton', Impact, 'Arial Black', sans-serif;
+            font-size: 28px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .lineup-schedule-title {
+                font-size: 34px;
+                margin-bottom: 28px;
+            }
+        }
+
+        .lineup-schedule-gates {
+            font-family: 'MiSans', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.35);
+        }
+
+        @media (min-width: 768px) {
+            .lineup-schedule-gates {
+                font-size: 19px;
+                margin-bottom: 28px;
+                padding-bottom: 24px;
+            }
+        }
+
+        .lineup-schedule-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        @media (min-width: 768px) {
+            .lineup-schedule-list {
+                gap: 16px;
+            }
+        }
+
+        .lineup-schedule-item {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 4px;
+            padding: 14px 16px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(201, 169, 97, 0.25);
+            border-radius: 6px;
+        }
+
+        @media (min-width: 640px) {
+            .lineup-schedule-item {
+                grid-template-columns: minmax(11em, 13em) minmax(0, 1fr);
+                align-items: baseline;
+                gap: 16px;
+                padding: 16px 20px;
+            }
+        }
+
+        .lineup-schedule-time {
+            font-family: 'MiSans', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+
+        @media (min-width: 768px) {
+            .lineup-schedule-time {
+                font-size: 14px;
+            }
+        }
+
+        .lineup-schedule-act {
+            font-family: 'MiSans', sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+            color: rgba(245, 241, 240, 0.95);
+        }
+
+        @media (min-width: 768px) {
+            .lineup-schedule-act {
+                font-size: 16px;
+            }
+        }
+
+        .lineup-schedule-act--live {
+            color: var(--cream-beige);
+            font-weight: 700;
+        }
         
         .afro-deco {
             display: inline-block;
@@ -2785,6 +2906,53 @@
                         <p class="lineup-band-sub">Richie Tee (Diverse FM, Jazz FM)<br>Keith Robles (Crackers Radio)<br>Paul Lewis (Solar Radio)<br>Richard Marzetti (Solar Radio)</p>
                     </div>
                 </a>
+            </div>
+
+            <div class="lineup-schedule fade-in-up" style="transition-delay: 0.85s;">
+                <h3 class="lineup-schedule-title">Running Order</h3>
+                <p class="lineup-schedule-gates">Gates open 1PM</p>
+                <ol class="lineup-schedule-list">
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">1.30PM – 2.15PM</span>
+                        <span class="lineup-schedule-act">Richie Tee (Jazz FM / DiverseFM) <span aria-hidden="true">(45 mins)</span></span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">2.15PM – 3.15PM</span>
+                        <span class="lineup-schedule-act">Keith Robles (Crackers Radio) <span aria-hidden="true">(60 mins)</span></span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">3.15PM – 3.40PM</span>
+                        <span class="lineup-schedule-act lineup-schedule-act--live">Live Act – Sasha Bond <span aria-hidden="true">(25 mins)</span></span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">3.40PM – 3.50PM</span>
+                        <span class="lineup-schedule-act">Keith Robles (Crackers Radio) <span aria-hidden="true">(10 mins)</span></span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">3.50PM – 5.00PM</span>
+                        <span class="lineup-schedule-act lineup-schedule-act--live">Ernie and The Family McKone <span aria-hidden="true">(70 mins)</span></span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">5.00PM – 5.45PM</span>
+                        <span class="lineup-schedule-act">Richard Marzetti (Solar Radio) <span aria-hidden="true">(45 mins)</span></span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">5.45PM – 6.15PM</span>
+                        <span class="lineup-schedule-act">Gavin Holligan with Richie Tee Q&amp;A</span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">6.15PM – 7.25PM</span>
+                        <span class="lineup-schedule-act lineup-schedule-act--live">Shakatak <span aria-hidden="true">(80 mins)</span></span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">7.25PM – 8.40PM</span>
+                        <span class="lineup-schedule-act">Paul Lewis (Solar Radio) <span aria-hidden="true">(75 mins)</span></span>
+                    </li>
+                    <li class="lineup-schedule-item">
+                        <span class="lineup-schedule-time">8.40PM – 9.55PM</span>
+                        <span class="lineup-schedule-act lineup-schedule-act--live">City Funk Orchestra</span>
+                    </li>
+                </ol>
             </div>
         </div>
     </section>
