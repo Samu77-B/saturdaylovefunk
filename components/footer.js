@@ -26,8 +26,8 @@
             </div>
             <div class="footer-col">
                 <h4>Event Details</h4>
-                <p>Broomfield Park<br>Palmers Green<br>London N13 4HE</p>
-                <p>Summer 2026</p>
+                <p>Scala<br>Kings Cross<br>London N1 9NL</p>
+                <p>Sunday 8th November 2026<br>1pm – 9pm</p>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>

@@ -40,16 +40,15 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#lineup">The Line Up</a></li>
+                    <li><a href="index.html#lineup">Past Line Up</a></li>
                     <li><a href="index.html#running-order">Running Order</a></li>
                     <li><a href="gallery-2024.html">Gallery</a></li>
                     <li><a href="https://open.spotify.com/user/31l67ucegyd54r3r3kczdbnoikim?si=b9f49e3e56b34b87" target="_blank" rel="noopener noreferrer">Spotify</a></li>
                     <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <a href="https://urnextevent.com/events/saturday-love-all-dayer-2026" target="_blank" class="btn btn-fill nav-btn">BUY NOW SLF26</a>
-                    <a href="index.html#lineup" class="btn nav-btn">The Line Up</a>
-                    <a href="index.html#upcoming-events" class="btn nav-btn">Upcoming Events</a>
+                    <a href="https://urnextevent.com/events/saturday-love-funk-the-big-club-night-all-dayer" target="_blank" rel="noopener noreferrer" class="btn btn-fill nav-btn">GET TICKETS</a>
+                    <a href="index.html#lineup" class="btn nav-btn">Past Line Up</a>
                 </div>
             </nav>
         </header>
