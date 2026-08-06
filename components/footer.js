@@ -27,7 +27,7 @@
             <div class="footer-col">
                 <h4>Event Details</h4>
                 <p>Scala<br>Kings Cross<br>London N1 9NL</p>
-                <p>Sunday 8th November 2026<br>1pm – 9pm</p>
+                <p>Sunday 8th November 2026<br>2pm – 10pm</p>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
