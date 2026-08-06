@@ -214,42 +214,41 @@
     main { padding-top: 115px; }
 
     @media (max-width: 767px) {
-      header { padding: 12px 14px 10px; }
-      header.scrolled-up { padding: 8px 14px 8px; }
+      header { padding: 10px 12px; }
+      header.scrolled-up { padding: 8px 12px; }
       .header-bar {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        grid-template-rows: auto auto;
-        column-gap: 8px;
-        row-gap: 8px;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-rows: auto;
+        column-gap: 6px;
+        row-gap: 0;
         align-items: center;
       }
       .header-left { grid-column: 1; grid-row: 1; }
       .header-actions {
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 1;
         justify-self: end;
-        gap: 6px;
+        gap: 4px;
         flex-shrink: 0;
       }
       .header-sponsors {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        justify-self: stretch;
-        width: 100%;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+        width: auto;
         max-width: 100%;
       }
-      .header-sponsors .logo-sponsor-wink-label { margin-bottom: 4px; }
-      .header-sponsors-logos { gap: 10px; }
-      .menu-toggle { font-size: 40px; padding: 2px 4px; line-height: 1; }
-      header.scrolled-up .menu-toggle { font-size: 34px; }
-      .header-spotify-link { gap: 5px; }
+      .header-sponsors .logo-sponsor-wink-label { display: none; }
+      .header-sponsors-logos { gap: 8px; }
+      .menu-toggle { font-size: 36px; padding: 2px 4px; line-height: 1; }
+      header.scrolled-up .menu-toggle { font-size: 32px; }
+      .header-spotify-link { gap: 0; }
       .header-spotify-link i { font-size: 28px; }
       header.scrolled-up .header-spotify-link i { font-size: 24px; }
-      .header-spotify-label { font-size: 8px; letter-spacing: 0.02em; max-width: 7.2em; }
-      header.scrolled-up .header-spotify-label { font-size: 7px; }
-      nav { padding-top: 125px; }
-      main { padding-top: 132px; }
+      .header-spotify-label { display: none; }
+      nav { padding-top: 80px; }
+      main { padding-top: 80px; }
     }
 
     .artist-hero {
@@ -461,7 +460,7 @@
 
   <div id="footer-container"></div>
 
-  <script src="components/header.js?v=14"></script>
+  <script src="components/header.js?v=16"></script>
   <script src="components/footer.js?v=9"></script>
 </body>
 </html>
