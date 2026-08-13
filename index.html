@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saturday Love Funk presents The Big Club All Dayer — Sunday 8th November 2026, Scala Kings Cross</title>
-    <meta name="description" content="Saturday Love Funk presents The Big Club All Dayer — Sunday 8th November 2026, 2pm to 10pm at Scala Kings Cross. The Dancefloor Reunion 70s &amp; 80s Jazz Funk, Soul and Boogie classics. Tickets £10 plus £2 booking fee. DJ lineup to be announced.">
-    <meta name="keywords" content="Saturday Love Funk, Big Club All Dayer, Brit Funk, funk event, Scala Kings Cross, London club night, jazz funk, soul, boogie, 1980s music, all dayer, November 2026, tickets, old skool">
+    <meta name="description" content="Saturday Love Funk presents The Big Club All Dayer — Sunday 8th November 2026, 2pm to 10pm at Scala Kings Cross. The Dancefloor Reunion 70s &amp; 80s Jazz Funk, Soul and Boogie. DJs: Colin Curtis, Colin Grumpy Brown, Akin Shenbanjo Jr, Abbey Clarke, Paul Lewis, Richard Marzetti, Richie Tee. Tickets £10 plus £2 booking fee.">
+    <meta name="keywords" content="Saturday Love Funk, Big Club All Dayer, Brit Funk, funk event, Scala Kings Cross, London club night, jazz funk, soul, boogie, 1980s music, all dayer, November 2026, tickets, old skool, Colin Curtis, Colin Grumpy Brown, Akin Shenbanjo Jr, Abbey Clarke, Paul Lewis, Richard Marzetti, Richie Tee">
     <meta name="author" content="Saturday Love Funk">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://saturdaylovefunk.com/">
     <meta property="og:title" content="Saturday Love Funk presents The Big Club All Dayer — 8th November 2026, Scala Kings Cross">
-    <meta property="og:description" content="The Dancefloor Reunion 70s &amp; 80s Jazz Funk, Soul and Boogie classics. Sunday 8th November 2026, 2pm–10pm at Scala Kings Cross. Tickets £10 + £2 booking fee.">
+    <meta property="og:description" content="The Dancefloor Reunion 70s &amp; 80s Jazz Funk, Soul and Boogie. Sunday 8th November 2026, 2pm–10pm at Scala Kings Cross. Line up: Colin Curtis, Colin Grumpy Brown, Akin Shenbanjo Jr, Abbey Clarke, Paul Lewis, Richard Marzetti, Richie Tee. Tickets £10 + £2 booking fee.">
     <meta property="og:image" content="https://saturdaylovefunk.com/images/SLF-Logo-yell.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://saturdaylovefunk.com/">
     <meta name="twitter:title" content="Saturday Love Funk presents The Big Club All Dayer — 8th November 2026, Scala Kings Cross">
-    <meta name="twitter:description" content="The Dancefloor Reunion 70s &amp; 80s Jazz Funk, Soul and Boogie classics. Sunday 8th November 2026, 2pm–10pm at Scala Kings Cross. Tickets £10 + £2 booking fee.">
+    <meta name="twitter:description" content="The Dancefloor Reunion 70s &amp; 80s Jazz Funk, Soul and Boogie. Sunday 8th November 2026, 2pm–10pm at Scala Kings Cross. Line up: Colin Curtis, Colin Grumpy Brown, Akin Shenbanjo Jr, Abbey Clarke, Paul Lewis, Richard Marzetti, Richie Tee. Tickets £10 + £2 booking fee.">
     <meta name="twitter:image" content="https://saturdaylovefunk.com/images/SLF-Logo-yell.png">
     <meta name="twitter:image:alt" content="Saturday Love Funk Logo">
     
@@ -1816,6 +1816,86 @@
             }
         }
 
+        .lineup-section--november {
+            background-image: url('images/scala/scala_funky.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .lineup-section--november .lineup-overlay {
+            background: rgba(10, 10, 10, 0.76);
+        }
+
+        .lineup-content .section-label {
+            justify-content: center;
+        }
+
+        .nov-dj-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            max-width: 1100px;
+            margin: 0 auto 36px;
+        }
+
+        .nov-dj-card {
+            flex: 1 1 220px;
+            max-width: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 96px;
+            padding: 22px 16px;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            background: rgba(10, 10, 10, 0.72);
+            text-align: center;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .nov-dj-card:hover {
+            border-color: var(--primary-orange);
+            box-shadow: 0 8px 24px rgba(238, 89, 45, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .nov-dj-card h3 {
+            font-family: 'Super Brave', 'Anton', Impact, 'Arial Black', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--cream-beige);
+            margin: 0;
+            line-height: 1.25;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+        }
+
+        .nov-dj-card p {
+            font-family: 'MiSans', sans-serif;
+            font-size: 12px;
+            color: var(--gold);
+            margin: 8px 0 0;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        @media (min-width: 768px) {
+            .nov-dj-grid {
+                gap: 18px;
+            }
+
+            .nov-dj-card {
+                min-height: 110px;
+                padding: 26px 18px;
+            }
+
+            .nov-dj-card h3 {
+                font-size: 20px;
+            }
+        }
+
         .lineup-schedule {
             margin-top: 56px;
             padding: 0 8px;
@@ -2764,7 +2844,7 @@
         <div class="hero-content fade-in-up">
             <p class="hero-tagline fade-in-up" style="transition-delay: 0.2s;">Saturday Love Funk presents</p>
             <h1 class="hero-title fade-in-up" style="transition-delay: 0.4s;">The Dancefloor Reunion</h1>
-            <p class="hero-groove-line fade-in-up" style="transition-delay: 0.5s;">70s &amp; 80s Jazz Funk, Soul and Boogie classics.</p>
+            <p class="hero-groove-line fade-in-up" style="transition-delay: 0.5s;">70s &amp; 80s Jazz Funk, Soul and Boogie.</p>
             <p class="hero-subtitle fade-in-up" style="transition-delay: 0.6s;">Sunday 8th November 2026 · Scala Kings Cross · 2pm–10pm</p>
             <a href="https://urnextevent.com/events/saturday-love-funk-the-big-club-night-all-dayer" target="_blank" rel="noopener noreferrer" class="btn btn-fill fade-in-up" style="transition-delay: 0.8s; padding: 18px 50px; font-size: 18px;">Get Tickets</a>
         </div>
@@ -2791,7 +2871,7 @@
     
     <!-- Add to Calendar and Share Buttons -->
     <div style="text-align: center; margin-top: 40px; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Saturday+Love+Funk+-+The+Big+Club+All+Dayer&dates=20261108T140000Z/20261108T220000Z&details=Saturday+Love+Funk+presents+The+Big+Club+All+Dayer.+The+Dancefloor+Reunion+70s+%26+80s+Jazz+Funk%2C+Soul+and+Boogie+classics.+At+Scala+Kings+Cross.+DJ+lineup+to+be+announced.&location=Scala%2C+275+Pentonville+Road%2C+Kings+Cross%2C+London+N1+9NL" target="_blank" rel="noopener noreferrer" class="btn btn-fill fade-in-up" style="transition-delay: 0.4s;">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Saturday+Love+Funk+-+The+Big+Club+All+Dayer&dates=20261108T140000Z/20261108T220000Z&details=Saturday+Love+Funk+presents+The+Big+Club+All+Dayer.+The+Dancefloor+Reunion+70s+%26+80s+Jazz+Funk%2C+Soul+and+Boogie.+At+Scala+Kings+Cross.+DJs:+Colin+Curtis,+Colin+Grumpy+Brown,+Akin+Shenbanjo+Jr,+Abbey+Clarke,+Paul+Lewis,+Richard+Marzetti,+Richie+Tee.&location=Scala%2C+275+Pentonville+Road%2C+Kings+Cross%2C+London+N1+9NL" target="_blank" rel="noopener noreferrer" class="btn btn-fill fade-in-up" style="transition-delay: 0.4s;">
             <i class="ri-calendar-add-line" style="margin-right: 8px;"></i>
             Add to Calendar
         </a>
@@ -2804,8 +2884,51 @@
     <!-- Event intro -->
     <section style="padding: 0 24px 60px; text-align: center; max-width: 720px; margin: 0 auto;">
         <p class="fade-in-up" style="font-family: 'MiSans', sans-serif; font-size: 17px; line-height: 1.7; color: rgba(245,241,240,0.9);">
-            Taking you back with The Dancefloor Reunion 70s &amp; 80s Jazz Funk, Soul and Boogie classics. One for the movers.
+            Taking you back with The Dancefloor Reunion 70s &amp; 80s Jazz Funk, Soul and Boogie. One for the movers.
         </p>
+    </section>
+
+    <!-- November Lineup -->
+    <section id="lineup" class="lineup-section lineup-section--november">
+        <div class="lineup-overlay"></div>
+        <div class="lineup-content">
+            <div class="afro-deco scale-in"></div>
+            <div class="section-label fade-in">The DJs</div>
+            <h2 class="section-title text-gold fade-in-up" style="font-size: 36px; margin-bottom: 16px; transition-delay: 0.2s;">THE BIG CLUB ALL DAYER LINE UP</h2>
+            <p class="fade-in-up" style="color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto 40px; font-family: 'MiSans', sans-serif; font-size: 16px; line-height: 1.6; text-align: center; transition-delay: 0.25s;">
+                Sunday 8th November 2026 · Scala Kings Cross · 2pm–10pm
+            </p>
+
+            <div class="nov-dj-grid">
+                <a class="nov-dj-card fade-in-up" style="transition-delay: 0.25s;" href="lineup-november-djs.html#colin-curtis">
+                    <h3>Colin Curtis</h3>
+                </a>
+                <a class="nov-dj-card fade-in-up" style="transition-delay: 0.3s;" href="lineup-november-djs.html#colin-grumpy-brown">
+                    <h3>Colin Grumpy Brown</h3>
+                    <p>Stomp Radio</p>
+                </a>
+                <a class="nov-dj-card fade-in-up" style="transition-delay: 0.35s;" href="lineup-november-djs.html#akin-shenbanjo-jr">
+                    <h3>Akin Shenbanjo Jr</h3>
+                </a>
+                <a class="nov-dj-card fade-in-up" style="transition-delay: 0.4s;" href="lineup-november-djs.html#abbey-clarke">
+                    <h3>Abbey Clarke</h3>
+                </a>
+                <a class="nov-dj-card fade-in-up" style="transition-delay: 0.45s;" href="lineup-november-djs.html#paul-lewis">
+                    <h3>Paul Lewis</h3>
+                    <p>Solar Radio</p>
+                </a>
+                <a class="nov-dj-card fade-in-up" style="transition-delay: 0.5s;" href="lineup-november-djs.html#richard-marzetti">
+                    <h3>Richard Marzetti</h3>
+                    <p>Solar Radio</p>
+                </a>
+                <a class="nov-dj-card fade-in-up" style="transition-delay: 0.55s;" href="lineup-november-djs.html#richie-tee">
+                    <h3>Richie Tee</h3>
+                    <p>Diverse FM, Jazz FM</p>
+                </a>
+            </div>
+
+            <a href="lineup-november-djs.html" class="btn fade-in-up" style="transition-delay: 0.65s;">Meet the DJs</a>
+        </div>
     </section>
 
     <!-- Sponsors Section -->
@@ -2830,10 +2953,11 @@
     </section>
 
     <!-- Past Lineup Section (July 2026 All-Dayer) -->
-    <section id="lineup" class="lineup-section">
+    <section id="past-lineup" class="lineup-section">
         <div class="lineup-overlay"></div>
         <div class="lineup-content">
             <div class="afro-deco scale-in"></div>
+            <div class="section-label fade-in">Past Event</div>
             <h2 class="section-title text-gold fade-in-up" style="font-size: 36px; margin-bottom: 16px; transition-delay: 0.2s;">SLF26 ALL-DAYER LINE UP</h2>
             <p class="fade-in-up" style="color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto 40px; font-family: 'MiSans', sans-serif; font-size: 16px; line-height: 1.6; text-align: center; transition-delay: 0.25s;">
                 Our 3rd All Dayer at Broomfield Park on 11th July 2026 was a huge success. Relive the artists and DJs who made the day.
@@ -3028,7 +3152,7 @@
             <h2 class="section-title fade-in-up" style="font-size: 42px;">Tickets</h2>
             <p class="ticket-status fade-in-up" style="transition-delay: 0.2s;">The Big Club All Dayer</p>
             <p class="ticket-price-info fade-in-up" style="transition-delay: 0.3s;">£10 plus £2 booking fee</p>
-            <p class="ticket-status fade-in-up" style="transition-delay: 0.4s; font-size: 15px;">DJ lineup to be announced</p>
+            <p class="ticket-status fade-in-up" style="transition-delay: 0.4s; font-size: 15px;"><a href="#lineup" style="color: inherit; text-decoration: underline;">Full DJ line up announced</a></p>
             <br>
             <a href="https://urnextevent.com/events/saturday-love-funk-the-big-club-night-all-dayer" target="_blank" rel="noopener noreferrer" class="btn fade-in-up" style="transition-delay: 0.6s;">Buy NOW</a>
         </div>
@@ -3039,7 +3163,7 @@
         <div class="newsletter-overlay"></div>
         <div class="newsletter-content fade-in-up">
             <h2 class="newsletter-title fade-in-up">Don't Miss The Beat</h2>
-            <p class="newsletter-desc fade-in-up" style="transition-delay: 0.2s;">Sign up for our newsletter to be the first to know when tickets drop and the lineup is revealed.</p>
+            <p class="newsletter-desc fade-in-up" style="transition-delay: 0.2s;">Sign up for our newsletter to stay in the loop with tickets, news and future events.</p>
             <div class="fade-in-up" style="transition-delay: 0.4s;">
                 <!-- Begin Brevo Form -->
                 <!-- START - We recommend to place the below code where you want the form in your website html  -->
@@ -3146,7 +3270,7 @@
     <div id="footer-container"></div>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=16"></script>
+    <script src="components/header.js?v=17"></script>
     <script src="components/footer.js?v=11"></script>
     <script src="components/led-meter.js"></script>
 
@@ -3154,7 +3278,7 @@
         // Share Event Function
         function shareEvent() {
             const eventTitle = "Saturday Love Funk — The Big Club All Dayer";
-            const eventText = "Saturday Love Funk presents The Big Club All Dayer — Sunday 8th November 2026, 2pm–10pm at Scala Kings Cross. The Dancefloor Reunion 70s & 80s Jazz Funk, Soul and Boogie classics. Tickets £10 + £2 booking fee.";
+            const eventText = "Saturday Love Funk presents The Big Club All Dayer — Sunday 8th November 2026, 2pm–10pm at Scala Kings Cross. The Dancefloor Reunion 70s & 80s Jazz Funk, Soul and Boogie. Tickets £10 + £2 booking fee.";
             const eventUrl = window.location.href;
             
             // Check if Web Share API is available (mobile devices)
@@ -3177,7 +3301,7 @@
         // Show share options (fallback for desktop)
         function showShareOptions() {
             const eventTitle = encodeURIComponent("Saturday Love Funk — The Big Club All Dayer");
-            const eventText = encodeURIComponent("Saturday Love Funk presents The Big Club All Dayer — Sunday 8th November 2026, 2pm–10pm at Scala Kings Cross. The Dancefloor Reunion 70s & 80s Jazz Funk, Soul and Boogie classics. Tickets £10 + £2 booking fee.");
+            const eventText = encodeURIComponent("Saturday Love Funk presents The Big Club All Dayer — Sunday 8th November 2026, 2pm–10pm at Scala Kings Cross. The Dancefloor Reunion 70s & 80s Jazz Funk, Soul and Boogie. Tickets £10 + £2 booking fee.");
             const eventUrl = encodeURIComponent(window.location.href);
             
             // Create share links
@@ -3208,7 +3332,7 @@
         function downloadCalendarEvent() {
             // Event details
             const eventTitle = "Saturday Love Funk — The Big Club All Dayer";
-            const eventDescription = "Saturday Love Funk presents The Big Club All Dayer. The Dancefloor Reunion 70s & 80s Jazz Funk, Soul and Boogie classics. At Scala Kings Cross. DJ lineup to be announced.";
+            const eventDescription = "Saturday Love Funk presents The Big Club All Dayer. The Dancefloor Reunion 70s & 80s Jazz Funk, Soul and Boogie. At Scala Kings Cross. DJs: Colin Curtis, Colin Grumpy Brown, Akin Shenbanjo Jr, Abbey Clarke, Paul Lewis, Richard Marzetti, Richie Tee.";
             const eventLocation = "Scala, 275 Pentonville Road, Kings Cross, London N1 9NL";
             const eventStart = "20261108T140000Z"; // Nov 8, 2026, 2:00 PM GMT
             const eventEnd = "20261108T220000Z";   // Nov 8, 2026, 10:00 PM GMT
@@ -3346,11 +3470,20 @@
         "@context": "https://schema.org",
         "@type": "MusicEvent",
         "name": "Saturday Love Funk presents The Big Club All Dayer",
-        "description": "The Dancefloor Reunion 70s & 80s Jazz Funk, Soul and Boogie classics. Sunday 8th November 2026 at Scala Kings Cross from 2pm to 10pm. DJ lineup to be announced. Tickets £10 plus £2 booking fee.",
+        "description": "The Dancefloor Reunion 70s & 80s Jazz Funk, Soul and Boogie. Sunday 8th November 2026 at Scala Kings Cross from 2pm to 10pm. DJs: Colin Curtis, Colin Grumpy Brown, Akin Shenbanjo Jr, Abbey Clarke, Paul Lewis, Richard Marzetti, Richie Tee. Tickets £10 plus £2 booking fee.",
         "startDate": "2026-11-08T14:00:00+00:00",
         "endDate": "2026-11-08T22:00:00+00:00",
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "performer": [
+            { "@type": "Person", "name": "Colin Curtis" },
+            { "@type": "Person", "name": "Colin Grumpy Brown" },
+            { "@type": "Person", "name": "Akin Shenbanjo Jr" },
+            { "@type": "Person", "name": "Abbey Clarke" },
+            { "@type": "Person", "name": "Paul Lewis" },
+            { "@type": "Person", "name": "Richard Marzetti" },
+            { "@type": "Person", "name": "Richie Tee" }
+        ],
         "location": {
             "@type": "Place",
             "name": "Scala",

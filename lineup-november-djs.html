@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Winkworth Palmers Green | Saturday Love Funk</title>
-  <meta name="description" content="Meet our sponsor Winkworth Palmers Green — trusted estate and letting agents based on Green Lanes.">
-  <link rel="icon" type="image/png" href="images/fav.png">
-  <link rel="preconnect" href="https://assets-persist.lovart.ai">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/super-brave-2" rel="stylesheet">
-  <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf" as="font" type="font/otf" crossorigin>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>November DJs - Saturday Love Funk</title>
+  <meta name="description" content="The Big Club All Dayer DJ line up at Scala Kings Cross: Colin Curtis, Colin Grumpy Brown, Akin Shenbanjo Jr, Abbey Clarke, Paul Lewis, Richard Marzetti, Richie Tee." />
+  <link rel="icon" type="image/png" href="images/fav.png" />
+  <link rel="preconnect" href="https://assets-persist.lovart.ai" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/super-brave-2" rel="stylesheet" />
+  <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
   <style>
     @font-face{font-family:'NotoSerifSC-Reg';src:url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf');font-weight:400;font-display:swap}
     @font-face{font-family:'MiSans';src:url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf');font-display:swap}
@@ -54,20 +54,25 @@
     .nav-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:998;opacity:0;transition:opacity .6s ease}
     .nav-overlay.active{display:block;opacity:1}
     main{padding-top:115px}
-    .sponsor-hero{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid rgba(201,169,97,.15)}
-    .sponsor-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.25) 0%,rgba(10,10,10,.85) 70%,var(--bg-dark) 100%)}
-    .sponsor-hero-inner{position:relative;z-index:1;width:min(1100px,calc(100% - 40px));margin:0 auto;padding:40px 0 46px}
-    .sponsor-kicker{font-family:'MiSans',sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-size:12px;margin-bottom:12px}
-    .sponsor-title{font-family:'Anton',Impact,'Arial Black',sans-serif;text-transform:uppercase;font-size:clamp(34px,6.6vw,72px);line-height:1.05;background:linear-gradient(to bottom,#fff 30%,var(--cream-beige) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
-    .sponsor-subtitle{font-family:'MiSans',sans-serif;font-size:16px;color:rgba(245,241,240,.9);max-width:75ch}
-    .sponsor-logo-wrap{display:flex;align-items:center;justify-content:flex-start;margin-top:18px}
-    .sponsor-logo{height:82px;width:auto;object-fit:contain;filter:drop-shadow(0 12px 26px rgba(0,0,0,.55))}
-    .sponsor-body{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:44px 0 70px;display:grid;grid-template-columns:1fr;gap:24px}
-    .sponsor-card{background:rgba(26,26,26,.65);border:1px solid rgba(201,169,97,.18);border-radius:16px;padding:22px}
-    .sponsor-card h2{font-family:'MiSans',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-size:14px;margin-bottom:12px}
-    .sponsor-card p{font-family:'MiSans',sans-serif;color:rgba(245,241,240,.9);line-height:1.9;font-size:15px;margin-bottom:14px}
-    .sponsor-card p:last-child{margin-bottom:0}
-    .sponsor-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .artist-hero{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid rgba(201,169,97,.15)}
+    .artist-hero video,.artist-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45)}
+    .artist-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.2) 0%,rgba(10,10,10,.85) 70%,var(--bg-dark) 100%)}
+    .artist-hero-inner{position:relative;z-index:1;width:min(1100px,calc(100% - 40px));margin:0 auto;padding:40px 0 46px}
+    .artist-kicker{font-family:'MiSans',sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-size:12px;margin-bottom:12px}
+    .artist-title{font-family:'Anton',Impact,'Arial Black',sans-serif;text-transform:uppercase;font-size:clamp(38px,7vw,78px);line-height:1.05;background:linear-gradient(to bottom,#fff 30%,var(--cream-beige) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+    .artist-subtitle{font-family:'MiSans',sans-serif;font-size:16px;color:rgba(245,241,240,.9);max-width:70ch}
+    .artist-body{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:44px 0 70px;display:grid;grid-template-columns:1fr;gap:24px}
+    .artist-card{background:rgba(26,26,26,.65);border:1px solid rgba(201,169,97,.18);border-radius:16px;padding:22px}
+    .artist-card h2{font-family:'MiSans',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-size:14px;margin-bottom:12px}
+    .artist-card p{font-family:'MiSans',sans-serif;color:rgba(245,241,240,.9);line-height:1.9;font-size:15px}
+    .artist-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .dj-list{margin-top:10px;display:flex;flex-direction:column;gap:22px}
+    .dj-item{padding:18px 16px;border:1px solid rgba(201,169,97,.16);border-radius:12px;background:rgba(0,0,0,.25);scroll-margin-top:140px}
+    .dj-heading{margin:0 0 12px;font-weight:400;line-height:1.35}
+    .dj-name{font-family:'MiSans',sans-serif;font-weight:800;letter-spacing:.02em;font-size:18px;color:var(--text-light)}
+    .dj-station{font-family:'MiSans',sans-serif;font-weight:600;font-size:15px;color:var(--gold)}
+    .dj-bio{margin:0;font-family:'MiSans',sans-serif;color:rgba(245,241,240,.9);line-height:1.9;font-size:15px}
+    .dj-bio cite{font-style:italic;color:rgba(245,241,240,.95)}
     footer{background:#050505;padding:40px 20px;border-top:1px solid #222;display:flex;flex-direction:column;gap:40px}
     .footer-col{width:100%}
     .footer-col h4{font-family:'MiSans',sans-serif;color:var(--gold);font-size:16px;margin-bottom:20px;text-transform:uppercase;letter-spacing:.06em}
@@ -78,7 +83,6 @@
     .footer-powered-by{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:4px}
     .footer-powered-by-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#888}
     .footer-powered-by-logo{height:clamp(24px,5vw,36px);width:auto;display:block}
-    .btn i{margin-right:8px}
     @media (min-width:768px){
       header{padding:25px 40px} header.scrolled-up{padding:15px 30px}
       header.scrolled-up .header-left .logo img{height:50px}
@@ -89,10 +93,6 @@
       nav{width:400px;padding:100px 40px 40px} nav a{font-size:16px;padding:18px 0}
       footer{flex-direction:row;flex-wrap:wrap;padding:60px 40px;justify-content:space-between}
       .footer-col{width:calc(50% - 20px)} .footer-col p,.footer-col a{font-size:14px}
-      main{padding-top:120px}
-      .sponsor-logo{height:96px}
-      .sponsor-card{padding:26px}
-      .sponsor-card p{font-size:16px}
     }
     @media (min-width:1024px){
       header{padding:25px 80px} header.scrolled-up{padding:15px 60px}
@@ -117,35 +117,59 @@
       .header-spotify-label{display:none}
       nav{padding-top:80px}
       main{padding-top:80px}
+      .dj-item{scroll-margin-top:100px}
     }
   </style>
 </head>
 <body>
   <div class="grid-overlay"></div>
   <div id="header-container"></div>
-
   <main>
-    <section class="sponsor-hero" aria-label="Winkworth sponsor hero">
-      <div class="sponsor-hero-inner">
-        <div class="sponsor-kicker">Sponsor</div>
-        <h1 class="sponsor-title">Winkworth</h1>
-        <p class="sponsor-subtitle">Experienced estate and letting agents in Palmers Green, based in the heart of the area on Green Lanes.</p>
-        <div class="sponsor-logo-wrap" aria-hidden="true">
-          <img class="sponsor-logo" src="Sponsor-Wink.png" alt="" loading="eager" decoding="async">
-        </div>
+    <section class="artist-hero" aria-label="November DJs hero">
+      <img src="images/scala/scala_funky.png" alt="Scala Kings Cross" />
+      <div class="artist-hero-inner">
+        <div class="artist-kicker">The Big Club All Dayer · 8th November 2026</div>
+        <h1 class="artist-title">The DJs</h1>
+        <p class="artist-subtitle">Jazz funk, soul and boogie from 2pm to 10pm at Scala Kings Cross</p>
       </div>
     </section>
 
-    <section class="sponsor-body">
-      <div class="sponsor-card">
-        <h2>Winkworth Estate and Letting Agents – Palmers Green</h2>
-        <p>Looking for experienced estate agents in Palmers Green? Our experienced team, based in the heart of Palmers Green on Green Lanes, offer expert sales and lettings services tailored to your needs.</p>
-        <p>As trusted estate and letting agents in Palmers Green, we specialise in selling and letting a wide range of properties, from luxury new build apartments and period conversions to Edwardian and Georgian houses.</p>
-        <p>Whether you're buying, selling, renting, or letting, our local expertise and personalised service make us the go-to estate agents in Palmers Green.</p>
+    <section class="artist-body">
+      <div class="artist-card">
+        <h2>The Scala line up</h2>
+        <div class="dj-list">
+          <article class="dj-item" id="colin-curtis">
+            <h3 class="dj-heading"><span class="dj-name">Colin Curtis</span></h3>
+            <p class="dj-bio">A pioneering British DJ whose career runs from Northern soul at the Golden Torch and Blackpool Mecca through jazz-funk residencies at Rafters and Berlin in Manchester. Colin helped shape the UK jazz-funk and jazz-dance scenes and remains one of the most respected selectors of the all-dayer era.</p>
+          </article>
+          <article class="dj-item" id="colin-grumpy-brown">
+            <h3 class="dj-heading"><span class="dj-name">Colin Grumpy Brown</span> <span class="dj-station">(Stomp Radio)</span></h3>
+            <p class="dj-bio">Known as Grumpy Brown, Colin presents the long-running Soullinn show on Stomp Radio and is a favourite on the UK soul circuit, including Summer Soulstice, Soul Family Affair and Music Without Labels.</p>
+          </article>
+          <article class="dj-item" id="akin-shenbanjo-jr">
+            <h3 class="dj-heading"><span class="dj-name">Akin Shenbanjo Jr</span></h3>
+            <p class="dj-bio">London DJ and radio presenter behind Rhythm Heritage on OurSalsaSoul Radio, playing soul, funk and jazz with a selector&rsquo;s ear for the dancefloor.</p>
+          </article>
+          <article class="dj-item" id="abbey-clarke">
+            <h3 class="dj-heading"><span class="dj-name">Abbey Clarke</span></h3>
+            <p class="dj-bio">Jazz-funk, soul and boogie selector joining the Scala line up for The Dancefloor Reunion.</p>
+          </article>
+          <article class="dj-item" id="paul-lewis">
+            <h3 class="dj-heading"><span class="dj-name">Paul Lewis</span> <span class="dj-station">(Solar Radio)</span></h3>
+            <p class="dj-bio">With a career spanning over 40 years, Paul Lewis is a veteran of the jazz-funk trenches. Having been a resident DJ at the famous Brunel Rooms, his current &ldquo;Sunday Breakfast&rdquo; show on Solar Radio is a masterclass in curation, blending his encyclopedic knowledge of the past with a keen eye for modern classics.</p>
+          </article>
+          <article class="dj-item" id="richard-marzetti">
+            <h3 class="dj-heading"><span class="dj-name">Richard Marzetti</span> <span class="dj-station">(Solar Radio)</span></h3>
+            <p class="dj-bio">Marzetti has become one of Solar Radio&rsquo;s most prolific voices since joining in 2012. Through his &ldquo;Soul Life&rdquo; and &ldquo;Gospel Sunrise&rdquo; shows, he explores the full spectrum of soulful music. An expert interviewer, he has sat down with legends ranging from Bluey of Incognito to Peabo Bryson, always focusing on the spirit and heart of the music.</p>
+          </article>
+          <article class="dj-item" id="richie-tee">
+            <h3 class="dj-heading"><span class="dj-name">Richie Tee</span> <span class="dj-station">(Diverse FM / Jazz FM)</span></h3>
+            <p class="dj-bio">A powerhouse in soul radio, Richie is known for the &ldquo;EnRiched&rdquo; brand. His broadcasting style is built on a foundation of genuine fandom and deep industry knowledge.</p>
+          </article>
+        </div>
 
-        <div class="sponsor-actions">
-          <a class="btn" href="index.html#sponsors"><i class="ri-arrow-left-line"></i>Back to sponsors</a>
-          <a class="btn" href="index.html#lineup">View line up</a>
+        <div class="artist-actions">
+          <a class="btn" href="index.html#lineup"><i class="ri-arrow-left-line" style="margin-right: 8px;"></i>Back to lineup</a>
           <a class="btn btn-fill" href="https://urnextevent.com/events/saturday-love-funk-the-big-club-night-all-dayer" target="_blank" rel="noopener noreferrer">Buy tickets</a>
         </div>
       </div>
