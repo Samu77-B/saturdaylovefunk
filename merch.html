@@ -64,6 +64,8 @@
     [data-paysynk-product]{width:100%;min-height:280px}
     [data-paysynk-product] > div{max-width:none !important;width:100%;height:100%;box-sizing:border-box}
     .merch-note{margin-top:28px;font-family:'MiSans',sans-serif;font-size:13px;color:#aaa;line-height:1.7}
+    body:not(.ecom-live) .merch-hero,
+    body:not(.ecom-live) .merch-body{display:none !important}
     footer{background:#050505;padding:40px 20px;border-top:1px solid #222;display:flex;flex-direction:column;gap:40px}
     .footer-col{width:100%}
     .footer-col h4{font-family:'MiSans',sans-serif;color:var(--gold);font-size:16px;margin-bottom:20px;text-transform:uppercase;letter-spacing:.06em}
@@ -137,8 +139,16 @@
   </main>
 
   <div id="footer-container"></div>
-  <script src="components/header.js?v=18"></script>
+  <script src="components/header.js?v=19"></script>
   <script src="components/footer.js?v=12"></script>
-  <script src="https://paysynk.com/embed.js" defer></script>
+  <script>
+    if (window.PAYSYNK_SHOP_LIVE) {
+      document.body.classList.add('ecom-live');
+      var embed = document.createElement('script');
+      embed.src = 'https://paysynk.com/embed.js';
+      embed.defer = true;
+      document.body.appendChild(embed);
+    }
+  </script>
 </body>
 </html>

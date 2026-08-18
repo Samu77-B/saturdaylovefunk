@@ -4,6 +4,10 @@
 (function() {
     'use strict';
 
+    // Flip to true when the client's Stripe / PaySynk account is connected.
+    const PAYSYNK_SHOP_LIVE = false;
+    window.PAYSYNK_SHOP_LIVE = PAYSYNK_SHOP_LIVE;
+
     // Header HTML template
     const headerHTML = `
         <!-- Navigation Overlay -->
@@ -44,7 +48,7 @@
                     <li><a href="index.html#past-lineup">Past Line Up</a></li>
                     <li><a href="index.html#running-order">Running Order</a></li>
                     <li><a href="gallery-2024.html">Gallery</a></li>
-                    <li><a href="merch.html">Merch</a></li>
+                    <li class="nav-item-merch"><a href="merch.html">Merch</a></li>
                     <li><a href="https://open.spotify.com/user/31l67ucegyd54r3r3kczdbnoikim?si=b9f49e3e56b34b87" target="_blank" rel="noopener noreferrer">Spotify</a></li>
                     <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
@@ -65,7 +69,12 @@
             // Initialize menu functionality after header is inserted
             initMenuToggle();
             initHeaderScroll();
-            initPaySynkCart();
+            if (PAYSYNK_SHOP_LIVE) {
+                initPaySynkCart();
+            } else {
+                const merchItem = headerContainer.querySelector('.nav-item-merch');
+                if (merchItem) merchItem.hidden = true;
+            }
         }
     }
 
