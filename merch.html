@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Sponsor - Philanthropy | Saturday Love Funk</title>
-  <meta name="description" content="Meet our main sponsor Philanthropy London — an innovative community interest company based in Palmers Green.">
+  <title>Merch | Saturday Love Funk</title>
+  <meta name="description" content="Official Saturday Love Funk merchandise — tees and tote bag from The Big Club All Dayer.">
   <link rel="icon" type="image/png" href="images/fav.png">
   <link rel="preconnect" href="https://assets-persist.lovart.ai">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://paysynk.com">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/super-brave-2" rel="stylesheet">
   <link rel="preload" href="https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
@@ -54,20 +55,15 @@
     .nav-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:998;opacity:0;transition:opacity .6s ease}
     .nav-overlay.active{display:block;opacity:1}
     main{padding-top:115px}
-    .sponsor-hero{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid rgba(201,169,97,.15)}
-    .sponsor-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.25) 0%,rgba(10,10,10,.85) 70%,var(--bg-dark) 100%)}
-    .sponsor-hero-inner{position:relative;z-index:1;width:min(1100px,calc(100% - 40px));margin:0 auto;padding:40px 0 46px}
-    .sponsor-kicker{font-family:'MiSans',sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-size:12px;margin-bottom:12px}
-    .sponsor-title{font-family:'Anton',Impact,'Arial Black',sans-serif;text-transform:uppercase;font-size:clamp(34px,6.6vw,72px);line-height:1.05;background:linear-gradient(to bottom,#fff 30%,var(--cream-beige) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
-    .sponsor-subtitle{font-family:'MiSans',sans-serif;font-size:16px;color:rgba(245,241,240,.9);max-width:75ch}
-    .sponsor-logo-wrap{display:flex;align-items:center;justify-content:flex-start;margin-top:18px}
-    .sponsor-logo{height:74px;width:auto;object-fit:contain;filter:drop-shadow(0 12px 26px rgba(0,0,0,.55))}
-    .sponsor-body{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:44px 0 70px;display:grid;grid-template-columns:1fr;gap:24px}
-    .sponsor-card{background:rgba(26,26,26,.65);border:1px solid rgba(201,169,97,.18);border-radius:16px;padding:22px}
-    .sponsor-card h2{font-family:'MiSans',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-size:14px;margin-bottom:12px}
-    .sponsor-card p{font-family:'MiSans',sans-serif;color:rgba(245,241,240,.9);line-height:1.9;font-size:15px;margin-bottom:14px}
-    .sponsor-card p:last-child{margin-bottom:0}
-    .sponsor-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .merch-hero{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:36px 0 12px}
+    .merch-kicker{font-family:'MiSans',sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-size:12px;margin-bottom:12px}
+    .merch-title{font-family:'Anton',Impact,'Arial Black',sans-serif;text-transform:uppercase;font-size:clamp(38px,7vw,78px);line-height:1.05;background:linear-gradient(to bottom,#fff 30%,var(--cream-beige) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+    .merch-subtitle{font-family:'MiSans',sans-serif;font-size:16px;color:rgba(245,241,240,.9);max-width:70ch;line-height:1.7}
+    .merch-body{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:28px 0 70px}
+    .merch-grid{display:grid;grid-template-columns:1fr;gap:24px}
+    [data-paysynk-product]{width:100%;min-height:280px}
+    [data-paysynk-product] > div{max-width:none !important;width:100%;height:100%;box-sizing:border-box}
+    .merch-note{margin-top:28px;font-family:'MiSans',sans-serif;font-size:13px;color:#aaa;line-height:1.7}
     footer{background:#050505;padding:40px 20px;border-top:1px solid #222;display:flex;flex-direction:column;gap:40px}
     .footer-col{width:100%}
     .footer-col h4{font-family:'MiSans',sans-serif;color:var(--gold);font-size:16px;margin-bottom:20px;text-transform:uppercase;letter-spacing:.06em}
@@ -90,15 +86,14 @@
       footer{flex-direction:row;flex-wrap:wrap;padding:60px 40px;justify-content:space-between}
       .footer-col{width:calc(50% - 20px)} .footer-col p,.footer-col a{font-size:14px}
       main{padding-top:120px}
-      .sponsor-logo{height:86px}
-      .sponsor-card{padding:26px}
-      .sponsor-card p{font-size:16px}
+      .merch-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media (min-width:1024px){
       header{padding:25px 80px} header.scrolled-up{padding:15px 60px}
       .logo img{height:90px} .header-sponsors .logo-sponsor-wink-wrap img{height:90px}
       .logo img.logo-sponsor-phil,.header-sponsors img.logo-sponsor-phil{height:59px}
       footer{padding:80px 100px;flex-wrap:nowrap} .footer-col{width:auto}
+      .merch-grid{grid-template-columns:repeat(3,1fr)}
     }
     @media (max-width:767px){
       header{padding:10px 12px}
@@ -125,35 +120,25 @@
   <div id="header-container"></div>
 
   <main>
-    <section class="sponsor-hero" aria-label="Philanthropy sponsor hero">
-      <div class="sponsor-hero-inner">
-        <div class="sponsor-kicker">Main Sponsor</div>
-        <h1 class="sponsor-title">Philanthropy</h1>
-        <p class="sponsor-subtitle">Community-powered, sustainable, and supporting local people in Palmers Green.</p>
-        <div class="sponsor-logo-wrap" aria-hidden="true">
-          <img class="sponsor-logo" src="Sponsor-Phil.png" alt="" loading="eager" decoding="async">
-        </div>
-      </div>
+    <section class="merch-hero" aria-label="Merch">
+      <div class="merch-kicker">Official merchandise</div>
+      <h1 class="merch-title">Merch</h1>
+      <p class="merch-subtitle">Saturday Love Funk tees and tote. Add to cart here — the cart stays in the header on every page, so you can keep browsing and check out when you’re ready.</p>
     </section>
 
-    <section class="sponsor-body">
-      <div class="sponsor-card">
-        <h2>About Philanthropy</h2>
-        <p>Philanthropy London is an innovative community interest company based in Palmers Green, that delivers benefits locally within the London Borough of Enfield by partnering with Enfield Council Equals Team and the Working Well Trust.</p>
-        <p>We offer paid employment in our shop to people with learning disabilities or people suffering with their mental health. In our shop we also offer customers the opportunity to support sustainable fashion and furnishing by buying pre-loved or vintage items of clothing, accessories, furniture and homewares.</p>
-        <p>We love to repair, up-cycle or remake some of our donations and we pride ourselves on creating a welcoming space for the local community to browse and shop.</p>
-
-        <div class="sponsor-actions">
-          <a class="btn" href="index.html#sponsors"><i class="ri-arrow-left-line"></i>Back to sponsors</a>
-          <a class="btn" href="index.html#lineup">View line up</a>
-          <a class="btn btn-fill" href="https://urnextevent.com/events/saturday-love-funk-the-big-club-night-all-dayer" target="_blank" rel="noopener noreferrer">Buy tickets</a>
-        </div>
+    <section class="merch-body">
+      <div class="merch-grid">
+        <div data-paysynk-product="tote-bag" data-store="saturday-love-funk"></div>
+        <div data-paysynk-product="classic-2024-limited-edition-tee" data-store="saturday-love-funk"></div>
+        <div data-paysynk-product="adults-classic-tee" data-store="saturday-love-funk"></div>
       </div>
+      <p class="merch-note">Checkout is powered by PaySynk. UK shipping is added at checkout.</p>
     </section>
   </main>
 
   <div id="footer-container"></div>
   <script src="components/header.js?v=18"></script>
   <script src="components/footer.js?v=12"></script>
+  <script src="https://paysynk.com/embed.js" defer></script>
 </body>
 </html>

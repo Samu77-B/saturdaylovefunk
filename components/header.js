@@ -44,6 +44,7 @@
                     <li><a href="index.html#past-lineup">Past Line Up</a></li>
                     <li><a href="index.html#running-order">Running Order</a></li>
                     <li><a href="gallery-2024.html">Gallery</a></li>
+                    <li><a href="merch.html">Merch</a></li>
                     <li><a href="https://open.spotify.com/user/31l67ucegyd54r3r3kczdbnoikim?si=b9f49e3e56b34b87" target="_blank" rel="noopener noreferrer">Spotify</a></li>
                     <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
@@ -64,7 +65,53 @@
             // Initialize menu functionality after header is inserted
             initMenuToggle();
             initHeaderScroll();
+            initPaySynkCart();
         }
+    }
+
+    // PaySynk cart: load once, then move the launcher into the header bar
+    function initPaySynkCart() {
+        if (!document.getElementById('paysynk-header-cart-style')) {
+            const style = document.createElement('style');
+            style.id = 'paysynk-header-cart-style';
+            style.textContent = [
+                '#paysynk-cart-launcher{position:static!important;right:auto!important;bottom:auto!important;z-index:2!important;flex-shrink:0;background:var(--primary-orange,#EE592D)!important;color:#fff!important;border:0!important;border-radius:999px!important;padding:8px 14px!important;font:700 11px MiSans,sans-serif!important;letter-spacing:1px!important;text-transform:uppercase!important;box-shadow:none!important;cursor:pointer;white-space:nowrap;line-height:1.2}',
+                '#paysynk-cart-launcher:hover{background:#d4481f!important}',
+                '@media (max-width:767px){#paysynk-cart-launcher{padding:7px 10px!important;font-size:10px!important}}'
+            ].join('');
+            document.head.appendChild(style);
+        }
+
+        if (!document.querySelector('script[src*="paysynk.com/cart.js"]')) {
+            const script = document.createElement('script');
+            script.src = 'https://paysynk.com/cart.js';
+            script.async = true;
+            script.setAttribute('data-store', 'saturday-love-funk');
+            script.setAttribute('data-merchant-id', 'cmsw40218000004kv58tadmc6');
+            document.body.appendChild(script);
+        }
+
+        function placeLauncher() {
+            const launcher = document.getElementById('paysynk-cart-launcher');
+            const actions = document.querySelector('.header-actions');
+            const menuToggle = document.getElementById('menuToggle');
+            if (!launcher || !actions) return false;
+            if (launcher.parentElement !== actions) {
+                if (menuToggle) {
+                    actions.insertBefore(launcher, menuToggle);
+                } else {
+                    actions.appendChild(launcher);
+                }
+            }
+            return true;
+        }
+
+        if (placeLauncher()) return;
+
+        const observer = new MutationObserver(function() {
+            if (placeLauncher()) observer.disconnect();
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
     }
 
     // Menu toggle functionality

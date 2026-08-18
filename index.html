@@ -1615,6 +1615,43 @@
             margin: 0 auto;
         }
 
+        /* Past lineup starts collapsed until the Open button is used */
+        #past-lineup.past-lineup-collapsed {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            #past-lineup.past-lineup-collapsed {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+
+        .past-lineup-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .past-lineup-toggle i {
+            font-size: 1.25em;
+        }
+
+        .past-lineup-panel[hidden] {
+            display: none;
+        }
+
+        .past-lineup-panel {
+            margin-top: 40px;
+        }
+
+        .past-lineup-close {
+            margin-top: 40px;
+        }
+
         .lineup-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1845,10 +1882,9 @@
             max-width: 260px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 96px;
-            padding: 22px 16px;
+            align-items: stretch;
+            overflow: hidden;
+            padding: 0;
             border: 2px solid var(--gold);
             border-radius: 8px;
             background: rgba(10, 10, 10, 0.72);
@@ -1862,12 +1898,22 @@
             transform: translateY(-3px);
         }
 
+        .nov-dj-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            object-position: center 18%;
+            display: block;
+            background: #111;
+        }
+
         .nov-dj-card h3 {
             font-family: 'Super Brave', 'Anton', Impact, 'Arial Black', sans-serif;
             font-size: 18px;
             font-weight: 700;
             color: var(--cream-beige);
             margin: 0;
+            padding: 14px 12px 8px;
             line-height: 1.25;
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
         }
@@ -1876,19 +1922,19 @@
             font-family: 'MiSans', sans-serif;
             font-size: 12px;
             color: var(--gold);
-            margin: 8px 0 0;
+            margin: 0;
+            padding: 0 12px 16px;
             letter-spacing: 0.04em;
             text-transform: uppercase;
+        }
+
+        .nov-dj-card h3:last-child {
+            padding-bottom: 16px;
         }
 
         @media (min-width: 768px) {
             .nov-dj-grid {
                 gap: 18px;
-            }
-
-            .nov-dj-card {
-                min-height: 110px;
-                padding: 26px 18px;
             }
 
             .nov-dj-card h3 {
@@ -2810,27 +2856,34 @@
 
             <div class="nov-dj-grid">
                 <a class="nov-dj-card fade-in-up" style="transition-delay: 0.25s;" href="lineup-november-djs.html#colin-curtis">
+                    <img src="DJs/colin-curtis.png" alt="Colin Curtis">
                     <h3>Colin Curtis</h3>
                 </a>
                 <a class="nov-dj-card fade-in-up" style="transition-delay: 0.3s;" href="lineup-november-djs.html#colin-grumpy-brown">
+                    <img src="DJs/colin-grumpy-brown.png" alt="Colin Grumpy Brown">
                     <h3>Colin Grumpy Brown</h3>
                     <p>Stomp Radio</p>
                 </a>
                 <a class="nov-dj-card fade-in-up" style="transition-delay: 0.35s;" href="lineup-november-djs.html#akin-shenbanjo-jr">
+                    <img src="DJs/akin-shenbanjo-jr.png" alt="Akin Shenbanjo Jr">
                     <h3>Akin Shenbanjo Jr</h3>
                 </a>
                 <a class="nov-dj-card fade-in-up" style="transition-delay: 0.4s;" href="lineup-november-djs.html#abbey-clarke">
+                    <img src="DJs/abbey-clarke.png" alt="Abbey Clarke">
                     <h3>Abbey Clarke</h3>
                 </a>
                 <a class="nov-dj-card fade-in-up" style="transition-delay: 0.45s;" href="lineup-november-djs.html#paul-lewis">
+                    <img src="DJs/Paul-Lewis.png" alt="Paul Lewis">
                     <h3>Paul Lewis</h3>
                     <p>Solar Radio</p>
                 </a>
                 <a class="nov-dj-card fade-in-up" style="transition-delay: 0.5s;" href="lineup-november-djs.html#richard-marzetti">
+                    <img src="DJs/richard-marzetti.png" alt="Richard Marzetti">
                     <h3>Richard Marzetti</h3>
                     <p>Solar Radio</p>
                 </a>
                 <a class="nov-dj-card fade-in-up" style="transition-delay: 0.55s;" href="lineup-november-djs.html#richie-tee">
+                    <img src="DJs/Richie-Tee.png" alt="Richie Tee">
                     <h3>Richie Tee</h3>
                     <p>Diverse FM, Jazz FM</p>
                 </a>
@@ -2862,12 +2915,18 @@
     </section>
 
     <!-- Past Lineup Section (July 2026 All-Dayer) -->
-    <section id="past-lineup" class="lineup-section">
+    <section id="past-lineup" class="lineup-section past-lineup-collapsed">
         <div class="lineup-overlay"></div>
         <div class="lineup-content">
             <div class="afro-deco scale-in"></div>
             <div class="section-label fade-in">Past Event</div>
             <h2 class="section-title text-gold fade-in-up" style="font-size: 36px; margin-bottom: 16px; transition-delay: 0.2s;">SLF26 ALL-DAYER LINE UP</h2>
+            <button type="button" class="btn past-lineup-toggle fade-in-up" id="past-lineup-toggle" style="transition-delay: 0.25s;" aria-expanded="false" aria-controls="past-lineup-panel">
+                <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                <span class="past-lineup-toggle-label">Open Line Up</span>
+            </button>
+
+            <div id="past-lineup-panel" class="past-lineup-panel" hidden>
             <p class="fade-in-up" style="color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto 40px; font-family: 'MiSans', sans-serif; font-size: 16px; line-height: 1.6; text-align: center; transition-delay: 0.25s;">
                 Our 3rd All Dayer at Broomfield Park on 11th July 2026 was a huge success. Relive the artists and DJs who made the day.
             </p>
@@ -2875,7 +2934,7 @@
             <div class="lineup-grid">
                 <a class="lineup-band-card fade-in-up" style="transition-delay: 0.25s;" href="lineup-city-funk-orchestra.html" aria-label="City Funk Orchestra - view details">
                     <div class="lineup-video-wrap">
-                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="City Funk Orchestra">
+                        <video class="lineup-card-video" muted loop playsinline preload="none" aria-label="City Funk Orchestra">
                             <source src="vids/CFO_01.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -2887,7 +2946,7 @@
                 </a>
                 <a class="lineup-band-card fade-in-up" style="transition-delay: 0.35s;" href="lineup-shakatak.html" aria-label="Shakatak - view details">
                     <div class="lineup-video-wrap">
-                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Shakatak">
+                        <video class="lineup-card-video" muted loop playsinline preload="none" aria-label="Shakatak">
                             <source src="vids/SLF_Shakatak.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -2899,7 +2958,7 @@
                 </a>
                 <a class="lineup-band-card lineup-band-card--sasha fade-in-up" style="transition-delay: 0.45s;" href="lineup-sasha-bond.html" aria-label="Sasha Jane Bond - view details">
                     <div class="lineup-video-wrap">
-                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Sasha Jane Bond">
+                        <video class="lineup-card-video" muted loop playsinline preload="none" aria-label="Sasha Jane Bond">
                             <source src="vids/SashaBond.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -2911,7 +2970,7 @@
                 </a>
                 <a class="lineup-band-card fade-in-up" style="transition-delay: 0.55s;" href="lineup-ernie-and-the-family-mckone.html" aria-label="Ernie and The Family McKone - view details">
                     <div class="lineup-video-wrap">
-                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Ernie and The Family McKone">
+                        <video class="lineup-card-video" muted loop playsinline preload="none" aria-label="Ernie and The Family McKone">
                             <source src="vids/Ernie.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -2922,7 +2981,7 @@
                 </a>
                 <a class="lineup-band-card fade-in-up" style="transition-delay: 0.65s;" href="lineup-gavin-holligan.html" aria-label="Gavin Holligan - view details">
                     <div class="lineup-video-wrap">
-                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="Gavin Holligan">
+                        <video class="lineup-card-video" muted loop playsinline preload="none" aria-label="Gavin Holligan">
                             <source src="vids/GavinHolligan02.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -2933,7 +2992,7 @@
                 </a>
                 <a class="lineup-band-card lineup-band-card--djs fade-in-up" style="transition-delay: 0.75s;" href="lineup-djs.html" aria-label="DJs - view details">
                     <div class="lineup-video-wrap">
-                        <video class="lineup-card-video" autoplay muted loop playsinline preload="metadata" aria-label="DJs at Saturday Love Funk">
+                        <video class="lineup-card-video" muted loop playsinline preload="none" aria-label="DJs at Saturday Love Funk">
                             <source src="vids/SLF-DJ.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -2994,6 +3053,12 @@
                         <span class="lineup-schedule-act lineup-schedule-act--live">City Funk Orchestra</span>
                     </li>
                 </ol>
+            </div>
+
+            <button type="button" class="btn past-lineup-toggle past-lineup-close">
+                <i class="ri-arrow-up-s-line" aria-hidden="true"></i>
+                Close Line Up
+            </button>
             </div>
         </div>
     </section>
@@ -3166,7 +3231,7 @@
     <div id="footer-container"></div>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=17"></script>
+    <script src="components/header.js?v=18"></script>
     <script src="components/footer.js?v=12"></script>
     <script src="components/led-meter.js"></script>
 
@@ -3294,6 +3359,90 @@
                 window.URL.revokeObjectURL(url);
             }
         }
+
+        // Past lineup: collapsed until Open is clicked
+        (function() {
+            const section = document.getElementById('past-lineup');
+            const toggle = document.getElementById('past-lineup-toggle');
+            const panel = document.getElementById('past-lineup-panel');
+            const toggleIcon = toggle ? toggle.querySelector('i') : null;
+            const toggleLabel = toggle ? toggle.querySelector('.past-lineup-toggle-label') : null;
+
+            if (!section || !toggle || !panel) return;
+
+            function setVideosPlaying(play) {
+                panel.querySelectorAll('.lineup-card-video').forEach(function(video) {
+                    if (play) {
+                        video.preload = 'auto';
+                        video.play().catch(function() {});
+                    } else {
+                        video.pause();
+                    }
+                });
+            }
+
+            function openPastLineup() {
+                panel.hidden = false;
+                section.classList.remove('past-lineup-collapsed');
+                toggle.setAttribute('aria-expanded', 'true');
+                if (toggleIcon) toggleIcon.className = 'ri-arrow-up-s-line';
+                if (toggleLabel) toggleLabel.textContent = 'Close Line Up';
+                panel.querySelectorAll('.fade-in-up, .fade-in, .scale-in').forEach(function(el) {
+                    el.classList.add('animate');
+                });
+                setVideosPlaying(true);
+            }
+
+            function closePastLineup() {
+                panel.hidden = true;
+                section.classList.add('past-lineup-collapsed');
+                toggle.setAttribute('aria-expanded', 'false');
+                if (toggleIcon) toggleIcon.className = 'ri-arrow-down-s-line';
+                if (toggleLabel) toggleLabel.textContent = 'Open Line Up';
+                setVideosPlaying(false);
+            }
+
+            function isOpen() {
+                return toggle.getAttribute('aria-expanded') === 'true';
+            }
+
+            function openFromHash() {
+                const hash = window.location.hash;
+                if (hash === '#past-lineup' || hash === '#running-order') {
+                    openPastLineup();
+                    if (hash === '#running-order') {
+                        requestAnimationFrame(function() {
+                            const order = document.getElementById('running-order');
+                            if (order) order.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        });
+                    }
+                }
+            }
+
+            toggle.addEventListener('click', function() {
+                if (isOpen()) {
+                    closePastLineup();
+                } else {
+                    openPastLineup();
+                }
+            });
+
+            panel.querySelectorAll('.past-lineup-close').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    closePastLineup();
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a[href*="#past-lineup"], a[href*="#running-order"]');
+                if (!link) return;
+                setTimeout(openFromHash, 0);
+            });
+
+            openFromHash();
+            window.addEventListener('hashchange', openFromHash);
+        })();
 
         // Animation on scroll - Intersection Observer
         const observerOptions = {
