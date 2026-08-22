@@ -8,6 +8,20 @@
     const PAYSYNK_SHOP_LIVE = true;
     window.PAYSYNK_SHOP_LIVE = PAYSYNK_SHOP_LIVE;
 
+    if (!document.getElementById('slf-mobile-header-style')) {
+        const mobileStyle = document.createElement('style');
+        mobileStyle.id = 'slf-mobile-header-style';
+        mobileStyle.textContent = [
+            '@media (max-width:767px){',
+            '.header-sponsors{display:none!important}',
+            'header .header-bar{grid-template-columns:1fr auto!important}',
+            '.header-left{grid-column:1!important;grid-row:1}',
+            '.header-actions{grid-column:2!important;grid-row:1;justify-self:end}',
+            '}'
+        ].join('');
+        document.head.appendChild(mobileStyle);
+    }
+
     // Header HTML template
     const headerHTML = `
         <!-- Navigation Overlay -->
