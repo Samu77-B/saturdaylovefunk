@@ -1909,10 +1909,20 @@
 
         .home-merch-content .section-label {
             justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.16em;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
         }
 
         .home-merch-content .section-label::before {
             display: none;
+        }
+
+        @media (min-width: 768px) {
+            .home-merch-content .section-label {
+                font-size: 16px;
+            }
         }
 
         .home-merch-content p {
