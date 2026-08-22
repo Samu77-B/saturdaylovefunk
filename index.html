@@ -1868,6 +1868,58 @@
             justify-content: center;
         }
 
+        /* Homepage merch */
+        .home-merch-section {
+            position: relative;
+            min-height: 420px;
+            padding: 80px 20px 48px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            background: url('merch-hero.png') no-repeat center 38% / cover;
+        }
+
+        @media (min-width: 768px) {
+            .home-merch-section {
+                min-height: 560px;
+                padding: 120px 40px 64px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .home-merch-section {
+                min-height: 640px;
+                padding: 140px 60px 80px;
+            }
+        }
+
+        .home-merch-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.38) 0%, rgba(10, 10, 10, 0.42) 40%, rgba(10, 10, 10, 0.88) 100%);
+        }
+
+        .home-merch-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+        }
+
+        .home-merch-content .section-label {
+            justify-content: center;
+        }
+
+        .home-merch-content p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 520px;
+            margin: 0 auto 28px;
+            font-family: 'MiSans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
         .nov-dj-grid {
             display: flex;
             flex-wrap: wrap;
@@ -2896,6 +2948,17 @@
         </div>
     </section>
 
+    <!-- Merch -->
+    <section id="merch" class="home-merch-section">
+        <div class="home-merch-overlay"></div>
+        <div class="home-merch-content">
+            <div class="section-label fade-in">Official merchandise</div>
+            <h2 class="section-title text-gold fade-in-up" style="font-size: 36px; margin-bottom: 16px; transition-delay: 0.2s;">MERCH</h2>
+            <p class="fade-in-up" style="transition-delay: 0.25s;">Saturday Love Funk tees, tote and sticker.</p>
+            <a href="merch.html" class="btn btn-fill fade-in-up" style="transition-delay: 0.35s;">Shop merch</a>
+        </div>
+    </section>
+
     <!-- Sponsors Section -->
     <section id="sponsors" class="sponsors-section">
         <div class="sponsors-inner">
@@ -3234,7 +3297,7 @@
     <div id="footer-container"></div>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=19"></script>
+    <script src="components/header.js?v=20"></script>
     <script src="components/footer.js?v=12"></script>
     <script src="components/led-meter.js"></script>
 

@@ -5,7 +5,7 @@
     'use strict';
 
     // Flip to true when the client's Stripe / PaySynk account is connected.
-    const PAYSYNK_SHOP_LIVE = false;
+    const PAYSYNK_SHOP_LIVE = true;
     window.PAYSYNK_SHOP_LIVE = PAYSYNK_SHOP_LIVE;
 
     // Header HTML template
