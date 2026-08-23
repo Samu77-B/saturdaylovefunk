@@ -1899,6 +1899,24 @@
             }
         }
 
+        .gallery-content .section-label {
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.16em;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .gallery-content .section-label::before {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-content .section-label {
+                font-size: 16px;
+            }
+        }
+
         /* Homepage merch */
         .home-merch-section {
             position: relative;
@@ -3181,7 +3199,7 @@
         </video>
         <div class="gallery-overlay"></div>
         <div class="gallery-content">
-            <div class="section-label fade-in" style="justify-content: center;">Event Galleries</div>
+            <div class="section-label fade-in">EVENT GALLERIES</div>
             <h2 class="section-title fade-in-up" style="transition-delay: 0.2s;">Relive The <span class="text-orange">Memories</span></h2>
             <p style="color: rgba(255,255,255,0.9); margin-bottom: 24px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto; transition-delay: 0.3s;" class="fade-in-up">
                 Browse through the sites and sounds from our past events at Broomfield Park
