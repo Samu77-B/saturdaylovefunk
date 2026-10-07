@@ -130,15 +130,18 @@
         }
 
         function restyleCartButton(launcher) {
+            if (launcher.getAttribute('data-slf-restyling')) return;
             const raw = (launcher.textContent || '').trim();
             const hasIcon = !!launcher.querySelector('.header-cart-icon');
             if (hasIcon && !/^Cart/i.test(raw)) return;
 
             const match = raw.match(/(\d+)/);
             const n = match ? parseInt(match[1], 10) : 0;
+            launcher.setAttribute('data-slf-restyling', '1');
             launcher.innerHTML = '<i class="ri-shopping-cart-2-line header-cart-icon" aria-hidden="true"></i>' +
                 '<span class="header-cart-count"' + (n ? '' : ' hidden') + '>' + (n || '') + '</span>';
             launcher.setAttribute('aria-label', n ? 'Open cart, ' + n + ' items' : 'Open cart');
+            launcher.removeAttribute('data-slf-restyling');
         }
 
         function watchLauncher(launcher) {
@@ -253,10 +256,19 @@
                 const root = document.getElementById('paysynk-cart-root');
                 if (!root || root.getAttribute('data-slf-continue-watched')) return !!root;
                 root.setAttribute('data-slf-continue-watched', '1');
+                let decorating = false;
                 const drawerObserver = new MutationObserver(function() {
-                    decorateDrawer();
+                    if (decorating) return;
+                    decorating = true;
+                    drawerObserver.disconnect();
+                    try {
+                        decorateDrawer();
+                    } finally {
+                        drawerObserver.observe(root, { childList: true, subtree: true });
+                        decorating = false;
+                    }
                 });
-                drawerObserver.observe(root, { childList: true, subtree: true, attributes: true });
+                drawerObserver.observe(root, { childList: true, subtree: true });
                 decorateDrawer();
                 return true;
             }

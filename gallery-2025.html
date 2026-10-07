@@ -1255,7 +1255,12 @@
         ];
 
         const imagePath = 'images/SFL 2025 Gallery Images/';
+        const thumbPath = 'images/SFL 2025 Gallery Images/thumbs/';
         let currentImageIndex = 0;
+
+        function getThumbPath(filename) {
+            return thumbPath + filename;
+        }
 
         function getFullImagePath(filename) {
             return imagePath + filename;
@@ -1300,7 +1305,7 @@
                             img.onerror = function() {
                                 placeholder.textContent = 'Image unavailable';
                             };
-                            img.src = getFullImagePath(filename);
+                            img.src = getThumbPath(filename);
                             observer.unobserve(entry.target);
                         }
                     });
@@ -1398,7 +1403,7 @@
     </script>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=25"></script>
+    <script src="components/header.js?v=26"></script>
     <script src="components/footer.js?v=12"></script>
 </body>
 </html>

@@ -2903,7 +2903,7 @@
 
     <!-- Hero -->
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
+        <video class="hero-video" muted loop playsinline preload="metadata">
             <source src="images/scala/scala_disco.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -3194,7 +3194,7 @@
 
     <!-- Gallery Section -->
     <section class="gallery-section">
-        <video class="gallery-section-video" autoplay muted loop playsinline>
+        <video class="gallery-section-video" muted loop playsinline preload="none">
             <source src="vids/SLF-2026-Evening.mp4" type="video/mp4">
         </video>
         <div class="gallery-overlay"></div>
@@ -3364,11 +3364,30 @@
     <div id="footer-container"></div>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=25"></script>
+    <script src="components/header.js?v=26"></script>
     <script src="components/footer.js?v=12"></script>
-    <script src="components/led-meter.js"></script>
+    <script src="components/led-meter.js?v=2"></script>
 
     <script>
+        (function() {
+            const videos = document.querySelectorAll('.hero-video, .gallery-section-video');
+            if (!videos.length || !('IntersectionObserver' in window)) return;
+            const io = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        if (video.preload === 'none') video.preload = 'metadata';
+                        video.play().catch(function() {});
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { rootMargin: '120px', threshold: 0.05 });
+            videos.forEach(function(video) {
+                io.observe(video);
+            });
+        })();
+
         // Share Event Function
         function shareEvent() {
             const eventTitle = "Saturday Love Funk — The Big Club All Dayer";

@@ -47,12 +47,16 @@
 
     function setSegState(seg, level) {
         var idx = parseInt(seg.getAttribute('data-i'), 10);
-        seg.classList.remove('slf-led-meter__seg--on', 'slf-led-meter__seg--dim');
+        var next = '';
         if (level >= idx) {
-            seg.classList.add('slf-led-meter__seg--on');
+            next = 'slf-led-meter__seg--on';
         } else if (level >= idx - 0.65) {
-            seg.classList.add('slf-led-meter__seg--dim');
+            next = 'slf-led-meter__seg--dim';
         }
+        if (seg.getAttribute('data-state') === next) return;
+        seg.setAttribute('data-state', next);
+        seg.classList.remove('slf-led-meter__seg--on', 'slf-led-meter__seg--dim');
+        if (next) seg.classList.add(next);
     }
 
     function clamp(n, a, b) {
@@ -76,6 +80,8 @@
         var t = 0;
         var lastTick = 0;
         var tickMs = 90;
+        var visible = true;
+        var rafId = 0;
 
         function pickTarget(base, phase) {
             var wobble = Math.sin(t * 0.002 + phase) * 2.2;
@@ -85,6 +91,10 @@
         }
 
         function frame(now) {
+            if (!visible) {
+                rafId = 0;
+                return;
+            }
             if (!lastTick) lastTick = now;
             var elapsed = now - lastTick;
             if (elapsed >= tickMs) {
@@ -111,10 +121,25 @@
                 setSegState(segsR[i], levelR);
             }
 
-            requestAnimationFrame(frame);
+            rafId = requestAnimationFrame(frame);
         }
 
-        requestAnimationFrame(frame);
+        function start() {
+            if (!rafId) {
+                lastTick = 0;
+                rafId = requestAnimationFrame(frame);
+            }
+        }
+
+        if ('IntersectionObserver' in window) {
+            var meterIo = new IntersectionObserver(function (entries) {
+                visible = entries.some(function (entry) { return entry.isIntersecting; });
+                if (visible) start();
+            }, { rootMargin: '80px' });
+            meterIo.observe(mount);
+        } else {
+            start();
+        }
 
         if (window.matchMedia) {
             var mql = window.matchMedia('(prefers-reduced-motion: reduce)');
