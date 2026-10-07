@@ -763,6 +763,35 @@
             }
         }
 
+        .gallery-year-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-year-nav a {
+            font-family: 'MiSans', sans-serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #aaa;
+            border: 1px solid rgba(201, 169, 97, 0.35);
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .gallery-year-nav a:hover,
+        .gallery-year-nav a.active {
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .gallery-year-nav a.active {
+            background: rgba(201, 169, 97, 0.12);
+        }
+
         .gallery-hero h1 {
             font-family: 'DelaGothicOne', cursive;
             font-size: 36px;
@@ -1154,6 +1183,11 @@
     <section class="gallery-hero">
         <h1>2024 Gallery</h1>
         <p>Broomfield Park, Palmers Green</p>
+        <div class="gallery-year-nav">
+            <a href="gallery-2024.html" class="active">2024</a>
+            <a href="gallery-2025.html">2025</a>
+            <a href="gallery-2026.html">2026</a>
+        </div>
         <a href="index.html" class="back-link">
             <i class="ri-arrow-left-line"></i>
             Back to Home
@@ -1485,7 +1519,7 @@
     </script>
 
     <!-- Reusable Components -->
-    <script src="components/header.js?v=23"></script>
+    <script src="components/header.js?v=25"></script>
     <script src="components/footer.js?v=12"></script>
 </body>
 </html>

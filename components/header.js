@@ -61,7 +61,7 @@
                     <li><a href="index.html#lineup">Line Up</a></li>
                     <li><a href="index.html#past-lineup">Past Line Up</a></li>
                     <li><a href="index.html#running-order">Running Order</a></li>
-                    <li><a href="gallery-2024.html">Gallery</a></li>
+                    <li><a href="gallery-2026.html">Gallery</a></li>
                     <li class="nav-item-merch"><a href="merch.html">Merch</a></li>
                     <li><a href="https://open.spotify.com/user/31l67ucegyd54r3r3kczdbnoikim?si=b9f49e3e56b34b87" target="_blank" rel="noopener noreferrer">Spotify</a></li>
                     <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
@@ -106,7 +106,16 @@
                 '@media (max-width:767px){#paysynk-cart-launcher{width:36px;height:36px}#paysynk-cart-launcher .header-cart-icon{font-size:20px}}',
                 '.slf-continue-shopping{width:100%;margin-top:10px;border:1px solid #d4d4d8;background:#fff;border-radius:999px;padding:.7rem 1rem;font:600 14px Outfit,MiSans,system-ui,sans-serif;cursor:pointer;color:#18181b}',
                 '.slf-continue-shopping:hover{background:#f4f4f5}',
-                '.slf-continue-shopping-wrap{padding:12px 18px 16px}'
+                '.slf-continue-shopping-wrap{padding:12px 18px 16px}',
+                '@keyframes slf-cart-in{from{transform:translateX(100%)}to{transform:translateX(0)}}',
+                '@keyframes slf-cart-out{from{transform:translateX(0)}to{transform:translateX(100%)}}',
+                '@keyframes slf-cart-fade-in{from{opacity:0}to{opacity:1}}',
+                '@keyframes slf-cart-fade-out{from{opacity:1}to{opacity:0}}',
+                '#paysynk-cart-root.slf-cart-open aside.slf-cart-panel{animation:slf-cart-in .4s cubic-bezier(.22,1,.36,1) both}',
+                '#paysynk-cart-root.slf-cart-open [data-ps-backdrop].slf-cart-backdrop{animation:slf-cart-fade-in .32s ease both}',
+                '#paysynk-cart-root.slf-cart-closing aside{animation:slf-cart-out .32s cubic-bezier(.4,0,1,1) both}',
+                '#paysynk-cart-root.slf-cart-closing [data-ps-backdrop]{animation:slf-cart-fade-out .32s ease both}',
+                '@media (prefers-reduced-motion:reduce){#paysynk-cart-root.slf-cart-open aside.slf-cart-panel,#paysynk-cart-root.slf-cart-open [data-ps-backdrop].slf-cart-backdrop,#paysynk-cart-root.slf-cart-closing aside,#paysynk-cart-root.slf-cart-closing [data-ps-backdrop]{animation:none}}'
             ].join('');
             document.head.appendChild(style);
         }
@@ -186,16 +195,69 @@
             }
         }
 
+        function wrapCartClose() {
+            if (!window.PaySynkCart || window.PaySynkCart._slfWrapped) return !!window.PaySynkCart;
+            const originalClose = window.PaySynkCart.close.bind(window.PaySynkCart);
+            let closing = false;
+            window.PaySynkCart.close = function() {
+                const root = document.getElementById('paysynk-cart-root');
+                const aside = root && root.querySelector('aside');
+                const skipMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (closing || skipMotion || !root || !aside || root.style.display === 'none') {
+                    closing = false;
+                    return originalClose();
+                }
+                closing = true;
+                root.classList.add('slf-cart-closing');
+                root.classList.remove('slf-cart-open');
+                let finished = false;
+                const finish = function() {
+                    if (finished) return;
+                    finished = true;
+                    closing = false;
+                    originalClose();
+                };
+                aside.addEventListener('animationend', finish, { once: true });
+                setTimeout(finish, 400);
+            };
+            window.PaySynkCart._slfWrapped = true;
+            return true;
+        }
+
+        function decorateDrawer() {
+            wrapCartClose();
+            const root = document.getElementById('paysynk-cart-root');
+            if (!root) return;
+            if (root.style.display === 'none' || !root.querySelector('aside')) {
+                root.removeAttribute('data-slf-opened');
+                root.classList.remove('slf-cart-open', 'slf-cart-closing');
+                return;
+            }
+            addContinueShopping();
+            const aside = root.querySelector('aside');
+            const backdrop = root.querySelector('[data-ps-backdrop]');
+            if (root.classList.contains('slf-cart-closing')) return;
+            if (!root.getAttribute('data-slf-opened')) {
+                root.setAttribute('data-slf-opened', '1');
+                root.classList.add('slf-cart-open');
+                if (aside) aside.classList.add('slf-cart-panel');
+                if (backdrop) backdrop.classList.add('slf-cart-backdrop');
+            } else {
+                if (aside) aside.classList.add('slf-cart-panel-static');
+                if (backdrop) backdrop.classList.add('slf-cart-backdrop-static');
+            }
+        }
+
         function watchCartDrawer() {
             function attach() {
                 const root = document.getElementById('paysynk-cart-root');
                 if (!root || root.getAttribute('data-slf-continue-watched')) return !!root;
                 root.setAttribute('data-slf-continue-watched', '1');
                 const drawerObserver = new MutationObserver(function() {
-                    addContinueShopping();
+                    decorateDrawer();
                 });
                 drawerObserver.observe(root, { childList: true, subtree: true, attributes: true });
-                addContinueShopping();
+                decorateDrawer();
                 return true;
             }
 
