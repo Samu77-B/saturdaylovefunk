@@ -22,6 +22,22 @@
         document.head.appendChild(mobileStyle);
     }
 
+    if (!document.getElementById('slf-dice-ticket-style')) {
+        const diceStyle = document.createElement('style');
+        diceStyle.id = 'slf-dice-ticket-style';
+        diceStyle.textContent = [
+            '.btn-dice{background:#111;border-color:#fff;color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:8px}',
+            '.btn-dice i{font-size:1.15em;line-height:1;margin:0}',
+            '.btn-dice:hover{background:#fff;border-color:#fff;color:#111}',
+            '.hero-ticket-btn.btn-dice{flex-direction:column;gap:4px}',
+            '.hero-ticket-main{display:inline-flex;align-items:center;gap:8px}',
+            '.nav-btn.btn-fill{display:inline-flex;align-items:center;justify-content:center;gap:8px}',
+            '.ticket-platform-logo{height:25px;width:auto;display:block;flex-shrink:0}',
+            '.nav-btn.btn-dice{border-color:#fff!important}'
+        ].join('');
+        document.head.appendChild(diceStyle);
+    }
+
     // Header HTML template
     const headerHTML = `
         <!-- Navigation Overlay -->
@@ -67,7 +83,8 @@
                     <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <a href="https://urnextevent.com/events/saturday-love-funk-the-big-club-night-all-dayer" target="_blank" rel="noopener noreferrer" class="btn btn-fill nav-btn">GET TICKETS</a>
+                    <a href="https://urnextevent.com/events/saturday-love-funk-the-big-club-night-all-dayer" target="_blank" rel="noopener noreferrer" class="btn btn-fill nav-btn"><img src="images/logos/urnextevent-logo.png" alt="" class="ticket-platform-logo" aria-hidden="true"> GET TICKETS · URNEXTEVENT</a>
+                    <a href="https://dice.fm/event/53k6d8-saturday-love-funk-the-dancefloor-reunion-8th-nov-scala-london-tickets?lng=en-US" target="_blank" rel="noopener noreferrer" class="btn btn-dice nav-btn"><i class="ri-dice-fill" aria-hidden="true"></i> GET TICKETS · DICE</a>
                     <a href="index.html#lineup" class="btn nav-btn">Line Up</a>
                 </div>
             </nav>
