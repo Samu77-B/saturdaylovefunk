@@ -83,9 +83,8 @@
                     <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <a href="https://urnextevent.com/events/saturday-love-funk-the-big-club-night-all-dayer" target="_blank" rel="noopener noreferrer" class="btn btn-fill nav-btn"><img src="images/logos/urnextevent-logo.png" alt="" class="ticket-platform-logo" aria-hidden="true"> GET TICKETS · URNEXTEVENT</a>
-                    <a href="https://dice.fm/event/53k6d8-saturday-love-funk-the-dancefloor-reunion-8th-nov-scala-london-tickets?lng=en-US" target="_blank" rel="noopener noreferrer" class="btn btn-dice nav-btn"><i class="ri-dice-fill" aria-hidden="true"></i> GET TICKETS · DICE</a>
-                    <a href="index.html#lineup" class="btn nav-btn">Line Up</a>
+                    <a href="index.html#scala-recap" class="btn btn-fill nav-btn">Watch the recap</a>
+                    <a href="index.html#lineup" class="btn nav-btn">Who played</a>
                 </div>
             </nav>
         </header>

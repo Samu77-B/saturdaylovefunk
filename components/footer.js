@@ -25,9 +25,9 @@
                 <p>Sponsors: Winkworth &amp; Philanthropy London</p>
             </div>
             <div class="footer-col">
-                <h4>Event Details</h4>
+                <h4>The Dancefloor Reunion</h4>
                 <p>Scala<br>Kings Cross<br>London N1 9NL</p>
-                <p>Sunday 8th November 2026<br>Doors open 1pm · 2pm – 10pm</p>
+                <p>Sunday 8th November 2026<br>A huge success — thank you</p>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
