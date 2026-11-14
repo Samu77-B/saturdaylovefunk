@@ -2293,6 +2293,45 @@
             box-shadow: 0 0 0 1px rgba(201, 169, 97, 0.45);
         }
 
+        .nov-dj-card-main {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            color: inherit;
+        }
+
+        .nov-dj-card--guest p {
+            padding-bottom: 8px;
+        }
+
+        .nov-dj-listen {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            align-self: center;
+            margin: 0 12px 14px;
+            padding: 8px 14px;
+            font-family: 'MiSans', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #0a0a0a;
+            background: #1ed760;
+            border-radius: 999px;
+        }
+
+        .nov-dj-listen i {
+            font-size: 15px;
+            line-height: 1;
+        }
+
+        .nov-dj-listen:hover {
+            background: #3be574;
+            color: #0a0a0a;
+        }
+
         .nov-dj-card h3 {
             font-family: 'Super Brave', 'Anton', Impact, 'Arial Black', sans-serif;
             font-size: 18px;
@@ -3279,12 +3318,17 @@
                     <h3>Richie Tee</h3>
                     <p>DiverseFM &amp; Jazz FM</p>
                 </a>
-                <a class="nov-dj-card nov-dj-card--guest fade-in-up" style="transition-delay: 0.6s;" href="lineup-november-djs.html#linda-muriel">
-                    <span class="nov-dj-guest-badge">Special Surprise Guest</span>
-                    <img src="images/Linda-Muriel-01.jpg" alt="Linda Muriel performing at Scala">
-                    <h3>Linda Muriel</h3>
-                    <p>Incognito</p>
-                </a>
+                <div class="nov-dj-card nov-dj-card--guest fade-in-up" style="transition-delay: 0.6s;">
+                    <a class="nov-dj-card-main" href="lineup-november-djs.html#linda-muriel">
+                        <span class="nov-dj-guest-badge">Special Surprise Guest</span>
+                        <img src="images/Linda-Muriel-01.jpg" alt="Linda Muriel performing at Scala">
+                        <h3>Linda Muriel</h3>
+                        <p>Incognito</p>
+                    </a>
+                    <a class="nov-dj-listen" href="https://open.spotify.com/track/3kt9MsJqfoZ0xBNQmIab9q" target="_blank" rel="noopener noreferrer">
+                        <i class="ri-spotify-fill" aria-hidden="true"></i> Simple Melody
+                    </a>
+                </div>
             </div>
 
             <a href="lineup-november-djs.html" class="btn fade-in-up" style="transition-delay: 0.65s;">Meet the DJs</a>
